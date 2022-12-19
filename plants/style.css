@@ -28,6 +28,10 @@
 	--dark-grey-color: #636060;
 }
 
+.text-green {
+	color: var(--green-color);
+}
+
 
 body {
 	min-height: 100vh;
@@ -36,6 +40,7 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 35px;
+	color: #000000
 }
 
 .container {
@@ -57,7 +62,6 @@ body {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 50px;
-	color: #000000;
 }
 
 .nav-list {
@@ -81,4 +85,47 @@ body {
 
 .nav-link:active {
 	color: var(--red-color);
+}
+
+.welcome-container {
+	padding-right: 109px;
+	background: var(--bg-section-color);
+}
+
+.welcome-text-container {
+	padding-left: 782px;
+	padding-bottom: 94px;
+}
+
+.welcome-title {
+	font-weight: 700;
+	font-size: 45px;
+	line-height: 50px;
+	color: var(--grey-color);
+}
+
+.welcome-text {
+	padding-top: 42px;
+	padding-bottom: 48px;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 35px;
+	color: var(--dark-grey-color);
+}
+
+.welcome-image-container {
+	padding: 62px 224px 62px 0px;
+}
+
+.btn-learn-more {
+	padding: 14px 27px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	text-transform: uppercase;
+	border-style: solid;
+	border-color: var(--red-color);
+	border-radius: 10px;
+	border-width: 2px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
