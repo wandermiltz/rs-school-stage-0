@@ -4,38 +4,9 @@
 	padding: 0;
 }
 
-:root {
-	--bg-section-color: #EDF2EC;
+html {
+	scroll-behavior: smooth;
 }
-
-:root {
-	--links-nav-color: #010201;
-}
-
-:root {
-	--red-color: #E06733;
-}
-
-:root {
-	--green-color: #499A18;
-}
-
-:root {
-	--grey-color: #717171;
-}
-
-:root {
-	--dark-grey-color: #636060;
-}
-
-.text-green {
-	color: var(--green-color);
-}
-
-.text-red {
-	color: var(--red-color);
-}
-
 
 body {
 	display: flex;
@@ -53,10 +24,6 @@ body {
 .container {
 	width: 1440px;
 	margin: 0 auto;
-}
-
-.header-container {
-	background: var(--bg-section-color);
 }
 
 .navbar {
@@ -99,7 +66,6 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0px 109px;
-	background: var(--bg-section-color);
 }
 
 .welcome-text-container {
@@ -125,36 +91,39 @@ body {
 }
 
 .welcome-image-container {
+	position: relative;
+	margin-top: 62px;
 	width: 449px;
-	padding: 62px 0px;
 }
 
 .leaf1 {
-	position: relative;
-	bottom: 350px;
-	left: 260px
+	position: absolute;
+	top: 111px;
+	left: 258px;
 }
 
 .leaf2 {
-	position: relative;
-	right: 90px;
+	position: absolute;
+	top: 0;
+	left: 19px;
 }
 
 .leaf3 {
-	position: relative;
-	left: 100px;
-	bottom: 30px
+	position: absolute;
+	top: 199px;
+	left: 102px;
 }
 
 .leaf4 {
-	position: relative;
-	top: 90px;
+	position: absolute;
+	top: 200px;
+	left: 0;
 }
 
 .leaf5 {
-	position: relative;
-	bottom: 80px;
-	left: 85px
+	position: absolute;
+	top: 253px;
+	right: 0;
 }
 
 .btn-learn-more {
@@ -201,4 +170,40 @@ body {
 
 .about-image-container {
 	padding: 94px 0px;
+}
+
+.bg-green {
+	background: var(--bg-section-color);
+}
+
+:root {
+	--bg-section-color: #EDF2EC;
+}
+
+:root {
+	--links-nav-color: #010201;
+}
+
+:root {
+	--red-color: #E06733;
+}
+
+:root {
+	--green-color: #499A18;
+}
+
+:root {
+	--grey-color: #717171;
+}
+
+:root {
+	--dark-grey-color: #636060;
+}
+
+.text-green {
+	color: var(--green-color);
+}
+
+.text-red {
+	color: var(--red-color);
 }
