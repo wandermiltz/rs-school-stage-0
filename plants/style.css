@@ -91,39 +91,8 @@ body {
 }
 
 .welcome-image {
-	position: relative;
-	margin-top: 62px;
-	width: 449px;
-}
-
-.leaf1 {
-	position: absolute;
-	top: 111px;
-	left: 258px;
-}
-
-.leaf2 {
-	position: absolute;
-	top: 0;
-	left: 19px;
-}
-
-.leaf3 {
-	position: absolute;
-	top: 199px;
-	left: 102px;
-}
-
-.leaf4 {
-	position: absolute;
-	top: 200px;
-	left: 0;
-}
-
-.leaf5 {
-	position: absolute;
-	top: 253px;
-	right: 0;
+	margin: auto 0;
+	margin-left: -10px;
 }
 
 .btn-learn-more {
