@@ -18,7 +18,7 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 35px;
-	color: #000000
+	color: black;
 }
 
 .container {
@@ -105,6 +105,13 @@ body {
 	border-color: var(--red-color);
 	border-radius: 10px;
 	border-width: 2px;
+	transition: 0.3s;
+}
+
+.btn-learn-more:hover {
+	color: white;
+	background-color: var(--red-color);
+
 }
 
 .about-container {
