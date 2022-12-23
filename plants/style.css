@@ -98,7 +98,7 @@ body {
 	color: var(--dark-grey-color);
 }
 
-.welcome-image {
+.welcome-image-leafs {
 	margin: auto 0;
 	margin-left: -10px;
 }
@@ -109,7 +109,7 @@ body {
 	font-size: 16px;
 	line-height: 20px;
 	text-transform: uppercase;
-	background-color: var(--bg-section-color);
+	background: none;
 	border-style: solid;
 	border-color: var(--red-color);
 	border-radius: 10px;
@@ -191,14 +191,13 @@ body {
 .btn {
 	width: 161px;
 	height: 50px;
-	margin-right: 38px;
 	font-family: 'Inika', serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 26px;
 	color: var(--red-color);
-	background-color: var(--bg-section-color);
+	background: none;
 	border-style: solid;
 	border-color: var(--red-color);
 	border-radius: 5px;
@@ -209,6 +208,10 @@ body {
 .btn:hover {
 	color: white;
 	background-color: var(--red-color);
+}
+
+.service-btn {
+	margin-right: 38px;
 }
 
 .service-items-container {
@@ -238,7 +241,7 @@ body {
 	align-items: center;
 	height: 100px;
 	border-style: solid;
-	border-color: #E3E1D5;
+	border-color: var(--border-color);
 	border-width: 1px;
 	border-radius: 0px 0px 20px 20px;
 }
@@ -261,6 +264,95 @@ body {
 	font-size: 16px;
 	line-height: 20px;
 	color: var(--grey-color);
+}
+
+.prices-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 40px 109px;
+}
+
+.prices-title {
+	padding-bottom: 60px;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 48px;
+}
+
+.prices-accordion-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	width: 332px;
+	height: 282px;
+	border-style: solid;
+	border-color: var(--border-color);
+	border-radius: 20px;
+	border-width: 1px;
+}
+
+.prices-items-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.price-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 250px;
+	height: 50px;
+	padding: 16px 40px;
+	margin-top: 32px;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	border-radius: 20px;
+	background-color: var(--bg-section-color);
+}
+
+.price-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #D9D9D9;
+}
+
+.prices-help-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.prices-help-text {
+	padding-bottom: 39px;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: right;
+}
+
+.contact-us-btn {
+	margin-bottom: 39px;
+}
+
+.prices-image-leafs {
+	margin: auto 0;
+	margin-right: -10px;
 }
 
 .bg-green {
@@ -297,4 +389,8 @@ body {
 
 :root {
 	--dark-grey-color: #636060;
+}
+
+:root {
+	--border-color: #E3E1D5;
 }
