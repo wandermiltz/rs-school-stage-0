@@ -101,6 +101,7 @@ body {
 	font-size: 16px;
 	line-height: 20px;
 	text-transform: uppercase;
+	background-color: var(--bg-section-color);
 	border-style: solid;
 	border-color: var(--red-color);
 	border-radius: 10px;
@@ -123,8 +124,7 @@ body {
 
 .about-article {
 	width: 605px;
-	padding-bottom: 155px;
-	padding-top: 161px;
+	padding-top: 162px;
 }
 
 .about-title {
@@ -145,7 +145,113 @@ body {
 }
 
 .about-image {
-	padding: 94px 0px;
+	margin: 93px 0 85px 0;
+}
+
+.service-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding-left: 109px;
+}
+
+.service-header-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px 0;
+}
+
+.service-title {
+	padding-right: 157px;
+	font-family: 'Inika', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 52px;
+	color: var(--green-color);
+}
+
+.service-btns-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.btn {
+	width: 161px;
+	height: 50px;
+	margin-right: 38px;
+	font-family: 'Inika', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 26px;
+	color: var(--red-color);
+	background-color: var(--bg-section-color);
+	border-style: solid;
+	border-color: var(--red-color);
+	border-radius: 5px;
+	border-width: 1px;
+	transition: 0.3s;
+}
+
+.btn:hover {
+	color: white;
+	background-color: var(--red-color);
+}
+
+.service-items-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: center;
+	width: 92%;
+	padding-top: 40px;
+	padding-bottom: 64px;
+}
+
+.service-item {
+	display: flex;
+	flex-direction: column;
+	width: 330px;
+	padding-bottom: 55px;
+}
+
+.service-img {
+	border-radius: 20px 20px 0px 0px;
+}
+
+.service-item-description {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100px;
+	border-style: solid;
+	border-color: #E3E1D5;
+	border-width: 1px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+.service-item-description-title {
+	padding-top: 10px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	color: var(--red-color);
+}
+
+.service-item-description-text {
+	padding-top: 13px;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	color: var(--grey-color);
 }
 
 .bg-green {
