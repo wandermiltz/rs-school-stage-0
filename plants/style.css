@@ -30,7 +30,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 42px 109px;
+	padding: 42px 112px 42px 109px;
 	font-family: 'Inika', serif;
 	font-style: normal;
 	font-weight: 400;
@@ -61,6 +61,14 @@ body {
 	color: var(--red-color);
 }
 
+.logo-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+
+}
+
 .welcome-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -82,7 +90,7 @@ body {
 }
 
 .welcome-text {
-	padding-top: 42px;
+	padding-top: 44px;
 	padding-bottom: 48px;
 	font-weight: 400;
 	font-size: 20px;
@@ -124,7 +132,7 @@ body {
 
 .about-article {
 	width: 605px;
-	padding-top: 162px;
+	padding-top: 160px;
 }
 
 .about-title {
@@ -137,7 +145,7 @@ body {
 }
 
 .about-text {
-	padding-top: 40px;
+	padding-top: 39px;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 30px;
@@ -145,7 +153,7 @@ body {
 }
 
 .about-image {
-	margin: 93px 0 85px 0;
+	margin: 93px 0 83px 0;
 }
 
 .service-container {
@@ -177,6 +185,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	padding: 20px 0;
 }
 
 .btn {
