@@ -30,7 +30,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 42px 112px 42px 109px;
+	padding: 42px 109px;
 	font-family: 'Inika', serif;
 	font-style: normal;
 	font-weight: 400;
@@ -46,7 +46,7 @@ body {
 }
 
 .nav-link {
-	padding-left: 46px;
+	padding-left: 45px;
 	text-decoration: none;
 	color: var(--links-nav-color);
 	transition: 0.3s;
@@ -120,7 +120,6 @@ body {
 .btn-learn-more:hover {
 	color: white;
 	background-color: var(--red-color);
-
 }
 
 .about-container {
@@ -274,7 +273,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 40px 109px;
+	padding: 40px 109px 103px 109px;
 }
 
 .prices-title {
@@ -358,6 +357,66 @@ body {
 	margin: auto 0;
 	margin-right: -10px;
 }
+
+.contacts-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 60px 109px;
+}
+
+.contacts-title {
+	padding-left: 47px;
+	font-family: 'Inika', serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 52px;
+	color: var(--green-color);
+}
+
+.contact-image {
+	margin-top: -5px;
+}
+
+.contacts-accordion-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 90px;
+	background-color: #D6E7D2;
+	width: 450px;
+	height: 50px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contact-item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 40px;
+	letter-spacing: 0.05em;
+	color: var(--grey-color);
+}
+
+.contact-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 33px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #AEA1A1;
+}
+
 
 .bg-green {
 	background: var(--bg-section-color);
