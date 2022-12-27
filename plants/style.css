@@ -21,9 +21,13 @@ body {
 	color: black;
 }
 
+.wrapper {
+	width: 1440px;
+	margin: auto;
+}
 
 .container {
-	max-width: 1220px;
+	width: 1220px;
 	margin: auto;
 }
 
