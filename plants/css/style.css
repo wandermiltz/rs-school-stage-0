@@ -1,7 +1,5 @@
 * {
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
 
 html {
@@ -47,7 +45,6 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	list-style: none;
 }
 
 .nav-link {
@@ -154,7 +151,7 @@ body {
 }
 
 .about-image {
-	margin: 93px 0 83px 0;
+	margin: 93px 0 94px 0;
 }
 
 .service-container {
@@ -185,7 +182,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	padding: 20px 0;
+	align-items: center;
 }
 
 .btn {
@@ -196,8 +193,8 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 26px;
-	color: var(--red-color);
 	background: none;
+	color: var(--red-color);
 	border-style: solid;
 	border-color: var(--red-color);
 	border-radius: 5px;
@@ -478,9 +475,7 @@ body {
 }
 
 .footer-icon {
-	background-color: none;
 	border-style: solid;
-	border-color: none;
 	border-radius: 50%;
 	border-width: 0;
 	transition: 0.3s;
@@ -491,10 +486,6 @@ body {
 	border-style: solid;
 	border-radius: 50%;
 	border-width: 0;
-}
-
-.footer-socialmedia-list {
-	list-style: none;
 }
 
 .bg-green {
