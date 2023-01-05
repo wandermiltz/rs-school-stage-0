@@ -71,13 +71,8 @@ body {
 }
 
 .wrapper {
-	width: 1440px;
-	margin: auto;
-}
-
-.container {
 	width: 1220px;
-	margin: auto;
+	margin: 0 auto;
 }
 
 .navbar {
@@ -98,8 +93,11 @@ body {
 	align-items: center;
 }
 
-.nav-link {
+.nav-item {
 	padding-left: 45px;
+}
+
+.nav-link {
 	text-decoration: none;
 	color: var(--links-nav-color);
 	transition: 0.3s;
