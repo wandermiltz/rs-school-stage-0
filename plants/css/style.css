@@ -46,13 +46,15 @@
 	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-
-* {
+html {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
-html {
-	scroll-behavior: smooth;
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
