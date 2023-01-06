@@ -81,7 +81,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 42px 0px;
+	padding: 42px 0;
 }
 
 .header-nav-list {
@@ -166,7 +166,7 @@ body {
 	border-color: var(--red-color);
 	border-radius: 10px;
 	border-width: 2px;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .btn-learn-more:hover {
@@ -251,7 +251,7 @@ body {
 	border-color: var(--red-color);
 	border-radius: 5px;
 	border-width: 1px;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .btn:hover {
@@ -261,7 +261,6 @@ body {
 
 .service-btn {
 	margin-right: 38px;
-	transition: 0.3s;
 }
 
 .service-items-container {
@@ -284,7 +283,7 @@ body {
 	background-color: #D6E7D2;
 	border-color: var(--border-color);
 	border-width: 1px;
-	border-radius: 0px 0px 20px 20px;
+	border-radius: 0 0 20px 20px;
 }
 
 .service-img {
@@ -296,7 +295,7 @@ body {
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
-	border-radius: 20px 20px 0px 0px;
+	border-radius: 20px 20px 0 0;
 }
 
 .service-item-description {
@@ -307,7 +306,7 @@ body {
 	border-style: solid;
 	border-color: var(--border-color);
 	border-width: 1px;
-	border-radius: 0px 0px 20px 20px;
+	border-radius: 0 0 20px 20px;
 }
 
 .service-item-description-title {
@@ -334,7 +333,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 40px 0px 103px 0px;
+	padding: 40px 0 103px 0;
 }
 
 .prices-title {
@@ -416,8 +415,8 @@ body {
 }
 
 .contact-us-btn {
+	font-weight: 700;
 	margin-bottom: 39px;
-	transition: 0.3s;
 }
 
 .prices-image-leafs {
@@ -429,7 +428,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 60px 0px 0px 0px;
+	padding-top: 60px;
 }
 
 .contacts-title {
@@ -455,7 +454,7 @@ body {
 	background-color: #D6E7D2;
 	width: 450px;
 	height: 50px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	transition: 0.5s;
 }
 
@@ -494,7 +493,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	padding: 40px 0px;
+	padding: 40px 0;
 }
 
 .footer-items-container {
@@ -669,7 +668,29 @@ body {
 		padding: 10px 30px;
 	}
 
+	.prices-container {
+		padding: 40px 0 78px 0;
+	}
 
+	.prices-title {
+		font-size: 35px;
+		line-height: 42px;
+		padding: 0 0 57px 12px;
+	}
+
+	.prices-help-text {
+		padding: 100px 0 28px 0;
+		font-size: 25px;
+		line-height: 35px;
+	}
+
+	.contact-us-btn {
+		margin: 0;
+	}
+
+	.prices-image-leafs {
+		margin-top: 28px;
+	}
 }
 
 @media screen and (max-width: 768px) {
