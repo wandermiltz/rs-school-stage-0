@@ -925,4 +925,15 @@ body {
 		height: 124px;
 		margin: 0;
 	}
+
+	.footer-container {
+		flex-direction: column;
+		padding: 10px 0;
+	}
+
+	.footer-link-school {
+		font-size: 20px;
+		line-height: 24px;
+		padding: 0 0 12px 0;
+	}
 }
