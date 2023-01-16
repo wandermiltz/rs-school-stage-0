@@ -70,7 +70,7 @@ body {
 	color: black;
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
 	.wrapper {
 		max-width: 1220px;
 		margin: 0 auto;
@@ -127,8 +127,7 @@ body {
 
 .welcome-article {
 	max-width: 549px;
-	padding-top: 98px;
-	padding-bottom: 94px;
+	padding: 98px 0 94px 0;
 }
 
 .welcome-title {
@@ -139,8 +138,7 @@ body {
 }
 
 .welcome-text {
-	padding-top: 43px;
-	padding-bottom: 48px;
+	padding: 43px 0 48px 0;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 35px;
@@ -580,22 +578,20 @@ body {
 	--border-color: #E3E1D5;
 }
 
-@media screen and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 1439px) {
 	.wrapper {
 		max-width: 668px;
 		margin: 0 auto;
 	}
 
 	.header-container {
-		padding-top: 36px;
-		padding-bottom: 32px;
+		padding: 36px 0 32px 0;
 	}
 
 	.welcome-article {
 		order: -1;
 		max-width: 346px;
-		padding-top: 40px;
-		padding-bottom: 70px;
+		padding: 40px 0 70px 0;
 	}
 
 	.welcome-title {
@@ -732,9 +728,57 @@ body {
 
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 767px) {
 	.wrapper {
-		max-width: 668px;
+		max-width: 330px;
 		margin: 0 auto;
 	}
+
+	.header-nav-list {
+		display: none;
+	}
+
+	.welcome-image-leafs {
+		display: none;
+	}
+
+	.prices-image-leafs {
+		display: none;
+
+	}
+
+	.header-container {
+		padding: 25px 0 25px 0;
+	}
+
+	.welcome-container {
+		padding: 25px 0 25px 0;
+	}
+
+	.welcome-article {
+		padding: 0;
+		max-width: 330px;
+	}
+
+	.welcome-title {
+		font-size: 25px;
+		line-height: 35px;
+	}
+
+	.welcome-text {
+		max-width: 315px;
+		padding: 20px 0 20px 0;
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.btn-learn-more {
+		width: 100px;
+		height: 34px;
+		padding: 0;
+		font-size: 10px;
+		line-height: 20px;
+	}
+
+
 }
