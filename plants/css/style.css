@@ -895,4 +895,34 @@ body {
 		font-size: 15px;
 		line-height: 20px;
 	}
+
+	.contacts-container {
+		padding: 25px 0 0 0;
+		justify-content: center;
+	}
+
+	.contacts-title {
+		font-size: 25px;
+		line-height: 33px;
+		padding: 0;
+	}
+
+	.contacts-accordion-container {
+		width: 300px;
+		margin: 80px 0 134px 0;
+	}
+
+	.contact-circle {
+		margin-right: 20px;
+	}
+
+	.contact-image {
+		order: 3;
+	}
+
+	.contact-image img {
+		width: 100px;
+		height: 124px;
+		margin: 0;
+	}
 }
