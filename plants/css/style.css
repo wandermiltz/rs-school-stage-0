@@ -83,6 +83,14 @@ body {
 	padding: 42px 0;
 }
 
+.nav {
+	display: flex;
+}
+
+.burger {
+	display: none;
+}
+
 .header-nav-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -736,10 +744,6 @@ body {
 		max-width: 330px;
 	}
 
-	.header-nav-list {
-		display: none;
-	}
-
 	.welcome-image-leafs {
 		display: none;
 	}
@@ -932,5 +936,41 @@ body {
 		font-size: 20px;
 		line-height: 24px;
 		padding: 0 0 12px 0;
+	}
+
+	@keyframes ani {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.burger {
+		display: block;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		background: url(../assets/png/burger.png) no-repeat center;
+		background-size: contain;
+		animation: ani 0.5s forwards;
+	}
+
+	.burger-active {
+		background: url(../assets/png/close.png) no-repeat center;
+		background-size: contain;
+		order: 3;
+	}
+
+	.header-nav-list {
+		display: none;
+		opacity: 0;
+		animation: ani 1s forwards;
+	}
+
+	.header-nav-list-active {
+		display: block;
 	}
 }
