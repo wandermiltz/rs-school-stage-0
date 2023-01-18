@@ -83,10 +83,6 @@ body {
 	padding: 42px 0;
 }
 
-.nav {
-	display: flex;
-}
-
 .burger {
 	display: none;
 }
@@ -961,16 +957,60 @@ body {
 	.burger-active {
 		background: url(../assets/png/close.png) no-repeat center;
 		background-size: contain;
-		order: 3;
+	}
+
+	.header-container {
+		position: relative;
+	}
+
+	.header-nav-item {
+		padding: 0px 20px;
+	}
+
+	.header-nav-list a {
+		display: flex;
+		justify-content: center;
+		margin: 5px;
+		line-height: 32px;
+		color: var(--dark-grey-color);
+		background-color: var(--bg-section-color);
+		border-radius: 10px;
+	}
+
+	.header-nav-list li {
+		width: 100%;
+	}
+
+	.header-nav-list a:hover {
+		background-color: #D6E7D2;
+		color: #499A18
 	}
 
 	.header-nav-list {
-		display: none;
-		opacity: 0;
-		animation: ani 1s forwards;
+		position: absolute;
+		top: 0;
+		right: 50px;
+		display: flex;
+		flex-direction: column;
+		padding: 5px;
+		z-index: 99;
+		transition: 0.5s;
+		transform: translateY(-100%);
+		background-color: #fff;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--border-color);
+		border-radius: 10px;
 	}
 
 	.header-nav-list-active {
-		display: block;
+		transform: translateY(30px);
 	}
+
+	/*
+		TODO
+		при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается,
+		также скрытие меню происходит если сделать клик вне данного окна+4
+		*/
+
 }
