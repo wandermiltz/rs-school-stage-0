@@ -527,7 +527,7 @@ body {
 }
 
 .footer-link-school {
-	padding: 0 0 0 40px;
+	padding: 0 0 0 20px;
 }
 
 .footer-icon {
@@ -971,7 +971,7 @@ body {
 		display: flex;
 		justify-content: center;
 		margin: 5px;
-		line-height: 32px;
+		line-height: 36px;
 		color: var(--dark-grey-color);
 		background-color: var(--bg-section-color);
 		border-radius: 10px;
@@ -989,7 +989,7 @@ body {
 	.header-nav-list {
 		position: absolute;
 		top: 0;
-		right: 50px;
+		right: 40px;
 		display: flex;
 		flex-direction: column;
 		padding: 5px;
