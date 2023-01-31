@@ -1,0 +1,128 @@
+.contacts-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 60px 0 0 0;
+}
+
+.contacts-title {
+	padding: 0 0 0 47px;
+	font-family: 'Inika', serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 52px;
+	color: var(--green-text-color);
+}
+
+.contact-image img {
+	width: 400px;
+	height: 497px;
+	margin-top: -5px;
+}
+
+.contacts-accordion-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 90px;
+	background-color: var(--light-green-hover-color);
+	width: 450px;
+	height: 50px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	transition: 0.5s;
+}
+
+.contacts-accordion-container:hover {
+	background-color: var(--light-green-hover-color);
+}
+
+.contact-item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0 0 20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 40px;
+	letter-spacing: 0.05em;
+	color: var(--grey-text-color);
+}
+
+.contact-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 33px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: var(--dark-grey-circle-color);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+
+	.contacts-container {
+		padding: 0;
+	}
+
+	.contacts-title {
+		padding: 40px 0 0 0;
+	}
+
+	.contacts-accordion-container {
+		margin: 100px 0 250px 0;
+	}
+
+	.contact-image {
+		order: 3;
+	}
+
+	.contact-image img {
+		width: 200px;
+		height: 249px;
+		margin: 0 0 0 20px;
+	}
+
+	.contacts-container {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.contacts-container {
+		padding: 25px 0 0 0;
+		justify-content: center;
+	}
+
+	.contacts-title {
+		font-size: 25px;
+		line-height: 33px;
+		padding: 0;
+	}
+
+	.contacts-accordion-container {
+		width: 300px;
+		margin: 80px 0 134px 0;
+	}
+
+	.contact-circle {
+		margin-right: 20px;
+	}
+
+	.contact-image {
+		order: 3;
+	}
+
+	.contact-image img {
+		width: 100px;
+		height: 124px;
+		margin: 0;
+	}
+}
