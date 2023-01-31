@@ -17,17 +17,17 @@
 
 	}
 	gardensServiceButton.addEventListener('click', () => {
-
 		serviceButtons.forEach(el => el.classList.remove('active'));
 		gardensServiceButton.classList.add('active')
-
 		serviceBlurHandler('gardens')
 	})
+
 	lawnServiceButton.addEventListener('click', () => {
 		serviceButtons.forEach(el => el.classList.remove('active'));
 		lawnServiceButton.classList.add('active')
 		serviceBlurHandler('lawn')
 	})
+
 	plantingServiceButton.addEventListener('click', () => {
 		serviceButtons.forEach(el => el.classList.remove('active'));
 		plantingServiceButton.classList.add('active')
