@@ -1,20 +1,27 @@
 (() => {
-	document.querySelectorAll('.price-item').forEach(el => {
+	const priceItems = document.querySelectorAll('.price-item');
+	const priceContents = document.querySelectorAll('.price-content');
+	const priceExpands = document.querySelectorAll('.price-expand');
+	const orderButtons = document.querySelectorAll('.order-button');
+
+	let handler = (el, i) => {
+		if (priceContents[i].style.maxHeight && event.target != orderButtons[i]) {
+			priceContents[i].style.maxHeight = null;
+			priceExpands[i].classList.remove('active');
+			el.classList.remove('active');
+		} else {
+			priceContents.forEach(el => el.style.maxHeight = null);
+			priceExpands.forEach(el => el.classList.remove('active'));
+			priceItems.forEach(el => el.classList.remove('active'));
+			priceContents[i].style.maxHeight = `${priceContents[i].scrollHeight}px`;
+			priceExpands[i].classList.add('active');
+			el.classList.add('active');
+		}
+	}
+
+	priceItems.forEach((el, i) => {
 		el.addEventListener('click', () => {
-			let content = el.lastElementChild;
-			let expand = el.firstElementChild.lastElementChild;
-			if (content.style.maxHeight) {
-				content.style.maxHeight = null;
-				expand.classList.remove('active');
-				el.classList.remove('active');
-			} else {
-				document.querySelectorAll('.price-content').forEach(el => el.style.maxHeight = null);
-				document.querySelectorAll('.price-expand').forEach(el => el.classList.remove('active'));
-				content.style.maxHeight = `${content.scrollHeight}px`;
-				expand.classList.add('active');
-				el.classList.add('active');
-			}
+			handler(el, i)
 		});
 	});
-	//TODO при нажатии на кнопку Order Accordion все еще остается открытым
 })();

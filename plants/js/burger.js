@@ -14,8 +14,8 @@
 	}
 
 
-	document.addEventListener('click', (e) => {
-		const withinBoundaries = e.composedPath().includes(burger);
+	document.addEventListener('click', el => {
+		const withinBoundaries = el.composedPath().includes(burger);
 		if (!withinBoundaries) {
 			removeMenu()
 		}
