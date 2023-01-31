@@ -110,11 +110,10 @@
 	border-top: 0.5px solid var(--dark-grey-circle-color);
 }
 
-
 .price-content {
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.2s;
+	transition: 0.2s;
 }
 
 .price-text {
@@ -241,8 +240,8 @@
 
 	.price-item {
 		width: 180px;
-		height: 50px;
-		padding: 0px 40px 0 30px;
+		min-height: 50px;
+		padding: 0px 40px 14px 30px;
 		margin-top: 15px;
 		font-size: 15px;
 	}
