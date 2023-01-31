@@ -4,7 +4,7 @@
 	const priceExpands = document.querySelectorAll('.price-expand');
 	const orderButtons = document.querySelectorAll('.order-button');
 
-	let handler = (el, i) => {
+	const accordionHandler = (el, i) => {
 		if (priceContents[i].style.maxHeight && event.target != orderButtons[i]) {
 			priceContents[i].style.maxHeight = null;
 			priceExpands[i].classList.remove('active');
@@ -21,7 +21,7 @@
 
 	priceItems.forEach((el, i) => {
 		el.addEventListener('click', () => {
-			handler(el, i)
+			accordionHandler(el, i)
 		});
 	});
 })();
