@@ -1,12 +1,8 @@
 (() => {
 	const serviceButtons = document.querySelectorAll('.service-btn');
 	const serviceItems = document.querySelectorAll('.service-item');
-	const gardensServiceButton = serviceButtons[0]
-	const lawnServiceButton = serviceButtons[1]
-	const plantingServiceButton = serviceButtons[2]
 
 	const serviceBlurHandler = (className) => {
-
 		serviceItems.forEach(el => {
 			el.classList.remove('blur');
 
@@ -14,24 +10,38 @@
 				el.classList.add('blur');
 			}
 		})
-
 	}
-	gardensServiceButton.addEventListener('click', () => {
-		serviceButtons.forEach(el => el.classList.remove('active'));
-		gardensServiceButton.classList.add('active')
-		serviceBlurHandler('gardens')
-	})
 
-	lawnServiceButton.addEventListener('click', () => {
-		serviceButtons.forEach(el => el.classList.remove('active'));
-		lawnServiceButton.classList.add('active')
-		serviceBlurHandler('lawn')
-	})
+	class serviceBlur {
+		constructor(elem) {
+			this._elem = elem;
+			elem.onclick = this.onClick.bind(this);
+		}
 
-	plantingServiceButton.addEventListener('click', () => {
-		serviceButtons.forEach(el => el.classList.remove('active'));
-		plantingServiceButton.classList.add('active')
-		serviceBlurHandler('planting')
-	})
+		gardens() {
+			serviceBlurHandler('gardens')
+		}
+
+		lawn() {
+			serviceBlurHandler('lawn')
+		}
+
+		planting() {
+			serviceBlurHandler('planting')
+		}
+
+		onClick(event) {
+			let action = event.target.dataset.action;
+			if (action) {
+				serviceButtons.forEach(el => {
+					el.classList.remove('active')
+				});
+				event.target.classList.add('active')
+				this[action]();
+			}
+		}
+	}
+
+	new serviceBlur(serviceButtonsContainer);
 
 })();
