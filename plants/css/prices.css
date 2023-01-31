@@ -159,7 +159,6 @@
 	color: white;
 }
 
-
 .prices-help {
 	display: flex;
 	flex-wrap: wrap;
@@ -213,6 +212,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
 	.prices-image-leafs {
 		display: none;
 	}
@@ -223,10 +223,37 @@
 	}
 
 	.prices-title {
-		padding: 0 0 35px 0;
+		padding: 0 0 35px 0px;
 		font-size: 25px;
 		line-height: 30px;
-		margin: 0 auto;
+	}
+
+	.prices-types {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.prices-accordion {
+		width: 224px;
+		padding: 15px 0 25px 0;
+	}
+
+	.price-item {
+		width: 180px;
+		height: 50px;
+		padding: 0px 40px 0 30px;
+		margin-top: 15px;
+		font-size: 15px;
+	}
+
+	.price-header {
+		padding-top: 15px;
+	}
+
+	.price-type {
+		font-size: 15px;
+		line-height: 20px;
 	}
 
 	.prices-help {
