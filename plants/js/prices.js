@@ -6,11 +6,11 @@
 
 	const accordionHandler = (el, i) => {
 		if (priceContents[i].style.maxHeight && event.target != orderButtons[i]) {
-			priceContents[i].style.maxHeight = null;
+			priceContents[i].style.maxHeight = '';
 			priceExpands[i].classList.remove('active');
 			el.classList.remove('active');
 		} else {
-			priceContents.forEach(el => el.style.maxHeight = null);
+			priceContents.forEach(el => el.style.maxHeight = '');
 			priceExpands.forEach(el => el.classList.remove('active'));
 			priceItems.forEach(el => el.classList.remove('active'));
 			priceContents[i].style.maxHeight = `${priceContents[i].scrollHeight}px`;
