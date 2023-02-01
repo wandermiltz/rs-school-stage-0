@@ -1,45 +1,57 @@
 (() => {
-	const serviceButtonsContainer = document.querySelector('.service-btns-container');
 	const serviceButtons = document.querySelectorAll('.service-btn');
 	const serviceItems = document.querySelectorAll('.service-item');
-	const serviceButtonGarden = document.querySelector('button[data-action="gardens"]');
-	const serviceButtonLawn = document.querySelector('button[data-action="lawn"]');
-	const serviceButtonPlanting = document.querySelector('button[data-action="planting"]');
-
 	const activeButtons = []
-	const allButtons = []
-	let disabledButton = ''
+
+	// Изначально без blur.
+	// При нажатии кнопки сама кнопка меняет стиль, при этом карточки, относящиеся к кнопке,
+	// должны быть без blur, а остальные - с blur.
+	// При нажатии двух кнопок все карточки, относящиеся к этим двум кнопкам - без blur,
+	// а относящиеся к третьей кнопке - с blur
+
 
 	serviceButtons.forEach(btn => {
 
-		allButtons.push(btn.dataset.action)
-
 		btn.addEventListener('click', (event) => {
 
-			if (activeButtons.includes(event.target.dataset.action)) {
-				activeButtons.splice(activeButtons.indexOf(event.target.dataset.action), 1)
+			let pressedBtn = event.target
+			let indexOfPressedBtn = activeButtons.indexOf(pressedBtn)
+
+			if (indexOfPressedBtn >= 0) {
+				activeButtons.splice(indexOfPressedBtn, 1)
 			} else {
-				activeButtons.push(event.target.dataset.action)
+				activeButtons.push(pressedBtn)
 			}
 
-			if (event.target.dataset.action) {
-				btn.classList.toggle('active')
-			}
+			btn.classList.toggle('active')
 
-			if (activeButtons.length === 2) {
+			let notSelectedButtons = Array.from(serviceButtons).filter(el => !activeButtons.includes(el))
 
-				disabledButton = allButtons.filter(el => !activeButtons.includes(el))
-				document.querySelector(`button[data-action="${disabledButton}"]`).classList.add('disabled')
+			notSelectedButtons.forEach(notSelectedBtn => {
+				if (activeButtons.length >= 2) {
+					notSelectedBtn.classList.add('disabled')
+				} else {
+					notSelectedBtn.classList.remove('disabled')
+				}
+			})
 
-			} else if (disabledButton) {
+			serviceItems.forEach(el => {
 
-				document.querySelector(`button[data-action="${disabledButton}"]`)?.classList.remove('disabled')
-				disabledButton = ''
+				let serviceType = el.dataset.service
+				let isButtonActive = !!activeButtons.find(btn => btn.dataset.service == serviceType)
 
-			}
-
+				if (isButtonActive) {
+					el.classList.remove('blur');
+				} else {
+					el.classList.add('blur');
+				}
+			})
 		})
 	})
+
+	// Без логики двух активных кнопок:
+
+	//const serviceButtonsContainer = document.querySelector('.service-btns-container');
 
 	// const blurHandler = (className, enabled) => {
 	// 	serviceItems.forEach(el => {
@@ -52,7 +64,7 @@
 
 	// serviceButtonsContainer.addEventListener('click', (event) => {
 
-	// 	let action = event.target.dataset.action;
+	// 	let action = event.target.dataset.service;
 	// 	if (action) {
 	// 		serviceButtons.forEach(el => {
 	// 			if (el !== event.target) {
@@ -68,6 +80,5 @@
 	// 		}
 	// 	}
 	// })
-
 
 })();
