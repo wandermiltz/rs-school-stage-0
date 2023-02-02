@@ -53,6 +53,10 @@ html {
 	--dark-grey-circle-color: #AEA1A1;
 }
 
+:root {
+	--green-accordion-color: #DCE9D9;
+}
+
 body {
 	display: flex;
 	justify-content: space-between;
