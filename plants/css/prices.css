@@ -179,6 +179,7 @@
 	height: 50px;
 	font-weight: 700;
 	margin-bottom: 39px;
+	transition: 0.5s;
 }
 
 .contact-us-btn:hover {

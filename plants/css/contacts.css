@@ -21,7 +21,7 @@
 	margin-top: -5px;
 }
 
-.contacts-cities {
+.city-container {
 	position: relative;
 	width: 450px;
 	margin-top: 90px;
@@ -149,17 +149,16 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	width: 448px;
 	height: 214px;
-	padding: 15px 0 31px 0;
+	padding: 15px 0 31px 36px;
 	margin-top: 47px;
 	border: 1px solid black;
 	border-radius: 20px;
 }
 
 .address-table {
-	margin-left: -75px;
 	font-size: 16px;
 	line-height: 40px;
 	text-align: left;
@@ -172,11 +171,18 @@
 }
 
 .call-us-btn {
+	margin-left: 125px;
 	width: 122px;
 	height: 26px;
 	font-size: 10px;
 	line-height: 13px;
-	color: var(--grey-text-color)
+	color: var(--grey-text-color);
+	transition: 0.5s;
+}
+
+.call-us-btn:hover {
+	color: white;
+	background-color: var(--red-text-color);
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
@@ -189,7 +195,7 @@
 		padding: 40px 0 0 0;
 	}
 
-	.contacts-cities {
+	.city-container {
 		margin: 100px 0 250px 0;
 	}
 
@@ -207,6 +213,10 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
+	.address-container {
+		margin-top: 61px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -222,11 +232,6 @@
 		padding: 0;
 	}
 
-	.contacts-cities {
-		width: 300px;
-		margin: 80px 0 134px 0;
-	}
-
 	.contact-image {
 		order: 3;
 	}
@@ -235,5 +240,32 @@
 		width: 100px;
 		height: 124px;
 		margin: 0;
+	}
+
+	.city-container {
+		width: 300px;
+		margin: 80px 0 134px 0;
+	}
+
+	.address-container {
+		margin-top: 54px;
+		width: 282px;
+		height: 212px;
+		padding: 35px 20px 22px 35px;
+	}
+
+	.address-table {
+		margin: 0;
+		line-height: 20px;
+		word-wrap: break-word;
+	}
+
+	.address-table th {
+		width: 40px;
+		padding-bottom: 16px;
+	}
+
+	.call-us-btn {
+		margin-left: 50px;
 	}
 }
