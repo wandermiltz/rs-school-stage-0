@@ -30,39 +30,18 @@
 	padding: 0 0 0 140px;
 }
 
-.btn {
-	width: 161px;
-	height: 50px;
-	font-family: 'Inika', serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 26px;
-	background: none;
-	color: var(--red-text-color);
-	border-style: solid;
-	border-color: var(--red-text-color);
-	border-radius: 5px;
-	border-width: 1px;
-	transition: 0.5s;
-}
-
-.btn:hover {
-	background-color: var(--light-grey-border-color);
-}
-
-.btn.active {
-	color: white;
-	background-color: var(--red-text-color);
-}
-
-.btn.disabled {
-	pointer-events: none;
-}
-
 .service-btn {
 	margin-right: 38px;
 	transition: 0.6s;
+}
+
+.service-btn:hover {
+	background-color: var(--light-grey-border-color);
+}
+
+.service-btn.active {
+	color: white;
+	background-color: var(--red-text-color);
 }
 
 .service-items-container {

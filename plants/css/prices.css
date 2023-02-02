@@ -69,8 +69,8 @@
 .price-expand:before,
 .price-expand:after {
 	position: absolute;
-	width: 0.5px;
-	height: 4px;
+	width: 0.2px;
+	height: 3px;
 	content: "";
 	background-color: var(--grey-text-color);
 	transform: translate(-50%, -50%);
@@ -177,6 +177,11 @@
 .contact-us-btn {
 	font-weight: 700;
 	margin-bottom: 39px;
+}
+
+.contact-us-btn:hover {
+	color: white;
+	background-color: var(--red-text-color);
 }
 
 .prices-image-leafs {
