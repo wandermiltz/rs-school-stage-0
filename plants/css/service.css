@@ -46,6 +46,10 @@
 	background-color: var(--red-text-color);
 }
 
+.service-btn.disabled {
+	pointer-events: none;
+}
+
 .service-items-container {
 	display: flex;
 	flex-wrap: wrap;

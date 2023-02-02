@@ -74,7 +74,6 @@
 	content: "";
 	background-color: var(--grey-text-color);
 	transform: translate(-50%, -50%);
-	transition: 0.3s;
 }
 
 .price-expand:before {

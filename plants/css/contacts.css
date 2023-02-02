@@ -37,11 +37,7 @@
 	background-color: var(--light-green-hover-color);
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-}
-
-.city-header:hover {
-	background-color: var(--bright-green-hover-color);
+	transition: 0.5s;
 }
 
 .city-header.active {
@@ -74,7 +70,6 @@
 	content: "";
 	background-color: white;
 	transform: translate(-50%, -50%);
-	transition: 0.3s;
 }
 
 .city-expand::before {
@@ -124,7 +119,7 @@
 .city-select::before {
 	position: absolute;
 	width: 100%;
-	height: 1px;
+	height: 0.5px;
 	top: 35px;
 	left: -7px;
 	content: "";
@@ -141,7 +136,7 @@
 
 .city-address {
 	max-height: 0;
-	/* overflow: hidden; */
+	overflow: hidden;
 	transition: 0.3s;
 }
 
