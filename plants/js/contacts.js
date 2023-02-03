@@ -1,14 +1,13 @@
 (() => {
-	const cityAccordion = document.querySelector('.city-accordion')
 	const cityHeader = document.querySelector('.city-header')
 	const cityTitle = document.querySelector('.city-title')
 	const cityContent = document.querySelector('.city-content')
 	const cityExpand = document.querySelector('.city-expand')
-	const cityList = document.querySelector('.city-list');
 	const cityDetails = document.querySelector('.city-details')
+	const citySelectArr = document.querySelectorAll('.city-select');
 	const cityAddressArr = document.querySelectorAll('.city-address')
 
-	cityAccordion.addEventListener('click', () => {
+	cityHeader.addEventListener('click', () => {
 
 		cityAddressArr.forEach(address => address.style.maxHeight = '')
 
@@ -25,19 +24,21 @@
 		}
 	});
 
-	cityList.addEventListener('click', (event) => {
+	citySelectArr.forEach(citySelect => {
 
-		event.stopPropagation()
+		citySelect.addEventListener('click', (event) => {
 
-		const chosenCity = event.target.dataset.city
-		const cityAddress = cityDetails.querySelector(`[data-city="${chosenCity}"]`)
+			event.stopPropagation()
 
-		cityAddressArr.forEach(cityAddress => cityAddress.style.maxHeight = '')
+			const chosenCity = event.target.dataset.city
+			const cityAddress = cityDetails.querySelector(`[data-city="${chosenCity}"]`)
 
-		cityTitle.textContent = event.target.textContent
-		cityAddress.style.maxHeight = `${cityAddress.scrollHeight}px`
-		cityContent.style.maxHeight = ''
-		cityExpand.classList.remove('active')
-	});
+			cityAddressArr.forEach(cityAddress => cityAddress.style.maxHeight = '')
 
+			cityTitle.textContent = event.target.textContent
+			cityAddress.style.maxHeight = `${cityAddress.scrollHeight}px`
+			cityContent.style.maxHeight = ''
+			cityExpand.classList.remove('active')
+		});
+	})
 })();
