@@ -36,7 +36,7 @@
 					activeButton.dataset.serviceType == serviceItem.dataset.serviceType
 				)
 
-				if (isButtonActive) {
+				if (isButtonActive || activeButtons.length == 0) {
 					serviceItem.classList.remove('blur');
 				} else {
 					serviceItem.classList.add('blur');
