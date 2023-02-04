@@ -33,7 +33,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 50px;
-	padding: 0 35px 0 22px;
+	padding: 0 35px 0 20px;
 	background-color: var(--light-green-hover-color);
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
@@ -53,9 +53,6 @@
 	color: var(--grey-text-color);
 }
 
-.city-title.active {
-	font-size: 16px;
-}
 
 .city-expand {
 	position: relative;
@@ -102,7 +99,7 @@
 .city-content {
 	max-height: 0;
 	overflow: hidden;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .city-list {
@@ -143,7 +140,7 @@
 .city-address {
 	max-height: 0;
 	overflow: hidden;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .address-container {
@@ -197,7 +194,11 @@
 	}
 
 	.city-container {
-		margin: 100px 0 250px 0;
+		margin: 100px 0 235px 0;
+	}
+
+	.city-container.active {
+		margin: 60px 0 0 0;
 	}
 
 	.contact-image {
@@ -207,7 +208,7 @@
 	.contact-image img {
 		width: 200px;
 		height: 249px;
-		margin: 0 0 0 20px;
+		margin: 15px 0 0 20px;
 	}
 
 	.contacts-container {
@@ -245,11 +246,20 @@
 
 	.city-container {
 		width: 300px;
-		margin: 80px 0 134px 0;
+		margin: 80px 0 132px 0;
+	}
+
+	.city-container.active {
+		width: 300px;
+		margin: 42px 0 33px 0;
+	}
+
+	.city-header {
+		padding: 0 20px;
 	}
 
 	.address-container {
-		margin-top: 54px;
+		margin: 54px 0 0 5px;
 		width: 282px;
 		height: 212px;
 		padding: 35px 20px 22px 35px;

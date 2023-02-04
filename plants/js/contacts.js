@@ -6,6 +6,7 @@
 	const cityDetails = document.querySelector('.city-details')
 	const citySelectArr = document.querySelectorAll('.city-select');
 	const cityAddressArr = document.querySelectorAll('.city-address')
+	const cityContainer = document.querySelector('.city-container')
 
 	cityHeader.addEventListener('click', () => {
 
@@ -17,10 +18,12 @@
 			cityContent.style.maxHeight = ''
 			cityExpand.classList.remove('active')
 			cityHeader.classList.remove('active')
+			cityContainer.classList.remove('active')
 		} else {
 			cityContent.style.maxHeight = `${cityContent.scrollHeight}px`
 			cityExpand.classList.add('active')
 			cityHeader.classList.add('active')
+			cityContainer.classList.add('active')
 		}
 	});
 
