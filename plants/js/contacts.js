@@ -24,6 +24,13 @@
 			cityExpand.classList.add('active')
 			cityHeader.classList.add('active')
 			cityContainer.classList.add('active')
+			document.querySelector('.contact-image').hidden = false;
+		}
+
+		if (cityContent.style.maxHeight && document.documentElement.clientWidth < 768) {
+			document.querySelector('.contact-image').hidden = true;
+		} else {
+			document.querySelector('.contact-image').hidden = false;
 		}
 	});
 

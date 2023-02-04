@@ -261,8 +261,8 @@
 	.address-container {
 		margin: 54px 0 0 5px;
 		width: 282px;
-		height: 212px;
-		padding: 35px 20px 22px 35px;
+		height: 210px;
+		padding: 30px 20px 22px 35px;
 	}
 
 	.address-table {
@@ -273,7 +273,7 @@
 
 	.address-table th {
 		width: 40px;
-		padding-bottom: 16px;
+		padding-bottom: 15px;
 	}
 
 	.call-us-btn {
