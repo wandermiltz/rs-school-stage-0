@@ -1,0 +1,282 @@
+.contacts-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 60px 0 0 0;
+}
+
+.contacts-title {
+	padding: 0 0 0 47px;
+	font-family: 'Inika', serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 52px;
+	color: var(--green-text-color);
+}
+
+.contact-image img {
+	width: 400px;
+	height: 497px;
+	margin-top: -5px;
+}
+
+.city-container {
+	position: relative;
+	width: 450px;
+	margin-top: 90px;
+}
+
+.city-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	padding: 0 35px 0 20px;
+	background-color: var(--light-green-hover-color);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.city-header.active {
+	background-color: var(--bright-green-hover-color);
+	box-shadow: none;
+	padding-left: 35px;
+	font-size: 16px;
+}
+
+.city-title {
+	line-height: 40px;
+	letter-spacing: 0.05em;
+	color: var(--grey-text-color);
+}
+
+
+.city-expand {
+	position: relative;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: var(--dark-grey-circle-color);
+}
+
+.city-expand:before,
+.city-expand:after {
+	position: absolute;
+	width: 0.2px;
+	height: 3px;
+	content: "";
+	background-color: white;
+	transform: translate(-50%, -50%);
+}
+
+.city-expand::before {
+	top: 7px;
+	left: 9px;
+	transform: rotate(45deg);
+}
+
+.city-expand::after {
+	top: 7px;
+	left: 7px;
+	transform: rotate(-45deg);
+}
+
+.city-expand.active {
+	background-color: #8BA07E;
+}
+
+.city-expand.active:before {
+	transform: rotate(-45deg);
+}
+
+.city-expand.active::after {
+	transform: rotate(45deg);
+}
+
+.city-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.city-list {
+	background-color: var(--green-accordion-color);
+	padding: 30px 35px 25px 35px;
+}
+
+.city-select {
+	position: relative;
+	left: 7px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	letter-spacing: 0.05em;
+	color: #499A18;
+	cursor: pointer;
+}
+
+.city-select::before {
+	position: absolute;
+	width: 100%;
+	height: 0.5px;
+	top: 35px;
+	left: -7px;
+	content: "";
+	background-color: #D9D9D9;
+	transition: 0.3s;
+	pointer-events: none;
+}
+
+.city-select:hover {
+	color: var(--grey-text-color)
+}
+
+.city-select:hover::before {
+	background-color: var(--grey-text-color);
+}
+
+.city-address {
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.address-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 448px;
+	height: 214px;
+	padding: 15px 0 31px 36px;
+	margin-top: 47px;
+	border: 1px solid black;
+	border-radius: 20px;
+}
+
+.address-table {
+	font-size: 16px;
+	line-height: 40px;
+	text-align: left;
+	letter-spacing: 0.05em;
+}
+
+.address-table td {
+	color: var(--grey-text-color);
+	padding-left: 5px;
+}
+
+.call-us-btn {
+	margin-left: 125px;
+	width: 122px;
+	height: 26px;
+	font-size: 10px;
+	line-height: 13px;
+	color: var(--grey-text-color);
+	transition: 0.5s;
+}
+
+.call-us-btn:hover {
+	color: white;
+	background-color: var(--red-text-color);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+
+	.contacts-container {
+		padding: 0;
+	}
+
+	.contacts-title {
+		padding: 40px 0 0 0;
+	}
+
+	.city-container {
+		margin: 100px 0 235px 0;
+	}
+
+	.city-container.active {
+		margin: 60px 0 0 0;
+	}
+
+	.contact-image {
+		order: 3;
+	}
+
+	.contact-image img {
+		width: 200px;
+		height: 249px;
+		margin: 15px 0 0 20px;
+	}
+
+	.contacts-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.address-container {
+		margin-top: 61px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.contacts-container {
+		padding: 25px 0 0 0;
+		justify-content: center;
+	}
+
+	.contacts-title {
+		font-size: 25px;
+		line-height: 33px;
+		padding: 0;
+	}
+
+	.contact-image {
+		order: 3;
+	}
+
+	.contact-image img {
+		width: 100px;
+		height: 124px;
+		margin: 0;
+	}
+
+	.city-container {
+		width: 300px;
+		margin: 80px 0 132px 0;
+	}
+
+	.city-container.active {
+		width: 300px;
+		margin: 42px 0 33px 0;
+	}
+
+	.city-header {
+		padding: 0 20px;
+	}
+
+	.address-container {
+		margin: 54px 0 0 5px;
+		width: 282px;
+		height: 210px;
+		padding: 30px 20px 22px 35px;
+	}
+
+	.address-table {
+		margin: 0;
+		line-height: 20px;
+		word-wrap: break-word;
+	}
+
+	.address-table th {
+		width: 40px;
+		padding-bottom: 15px;
+	}
+
+	.call-us-btn {
+		margin-left: 50px;
+	}
+}

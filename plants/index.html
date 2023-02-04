@@ -46,7 +46,7 @@
 
 		<section class="bg-green" id="welcome">
 			<div class="wrapper">
-				<div class="welcome-container">
+				<div class="welcome-section-container">
 					<div class="welcome-image-leafs">
 						<img src="./assets/png/leafs.png" alt="leafs-image">
 					</div>
@@ -59,7 +59,7 @@
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
 						</div>
-						<button class="btn-learn-more">
+						<button class="learn-more-btn">
 							Learn more
 						</button>
 					</div>
@@ -68,7 +68,7 @@
 		</section>
 		<section id="about">
 			<div class="wrapper">
-				<div class="about-container">
+				<div class="about-section-container">
 					<div class="about-article">
 						<h2 class="about-title">
 							We are <span class="text-red">professional <br>
@@ -90,19 +90,19 @@
 		</section>
 		<section class="bg-green" id="service">
 			<div class="wrapper">
-				<div class="service-container">
+				<div class="service-section-container">
 					<div class="service-header-container">
 						<h2 class="service-title">
 							Service and our projects
 						</h2>
 						<div class="service-btns-container">
-							<button class="btn service-btn">Gardens</button>
-							<button class="btn service-btn">Lawn</button>
-							<button class="btn service-btn">Planting</button>
+							<button data-service-type="gardens" class="btn-bordered service-btn">Gardens</button>
+							<button data-service-type="lawn" class="btn-bordered service-btn">Lawn</button>
+							<button data-service-type="planting" class="btn-bordered service-btn">Planting</button>
 						</div>
 					</div>
 					<div class="service-items-container">
-						<div class="service-item">
+						<div class="service-item" data-service-type="gardens">
 							<div class="service-img">
 								<img src="./assets/png/photo-garden-care-woman.png" alt="garden-care-woman-photo">
 							</div>
@@ -115,7 +115,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="service-item">
+						<div class="service-item" data-service-type="planting">
 							<div class="service-img">
 								<img class="service-img" src="./assets/png/photo-planting-lemon.png" alt="planting-lemon-photo">
 							</div>
@@ -128,7 +128,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="service-item">
+						<div class="service-item" data-service-type="lawn">
 							<div class="service-img">
 								<img class="service-img" src="./assets/png/photo-lawn-care.png" alt="lawn-care-photo">
 							</div>
@@ -141,7 +141,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="service-item">
+						<div class="service-item" data-service-type="planting">
 							<div class="service-img">
 								<img class="service-img" src="./assets/png/photo-planting-woman.png" alt="planting-woman-photo">
 							</div>
@@ -154,7 +154,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="service-item">
+						<div class="service-item" data-service-type="gardens">
 							<div class="service-img">
 								<img class="service-img" src="./assets/png/photo-garden-care-succulent.png"
 									alt="garden-care-succulent-photo">
@@ -168,7 +168,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="service-item">
+						<div class="service-item" data-service-type="planting">
 							<div class="service-img">
 								<img class="service-img" src="./assets/png/photo-planting-cactus.png" alt="planting-cactus-photo">
 							</div>
@@ -187,37 +187,75 @@
 		</section>
 		<section id="prices">
 			<div class="wrapper">
-				<div class="prices-container">
-					<div class="prices-items-container">
+				<div class="prices-section-container">
+					<div class="prices-types">
 						<h2 class="prices-title">Prices</h2>
-						<div class="prices-accordion-container">
+						<div class="prices-accordion">
 							<div class="price-item">
-								<div>Basics</div>
-								<div class="price-circle">
-									<img src="./assets/svg/arrow-grey.svg" alt="arrow">
+								<div class="price-header">
+									<p class="price-type">Basics</p>
+									<span class="price-expand"></span>
+								</div>
+								<div class="price-content" style>
+									<div class="price-line"></div>
+									<p class="price-text">Release of Letraset sheets containing Lorem Ipsum passages,
+										and more recently</p>
+									<p>
+										<span class="text-red price-currency">$</span><span class="text-red price-value">15</span><span
+											class="price-summary">/ per hour</span>
+									</p>
+									<form action="#contacts">
+										<button class="order-button">Order</button>
+									</form>
 								</div>
 							</div>
 							<div class="price-item">
-								<div>Standard</div>
-								<div class="price-circle">
-									<img src="./assets/svg/arrow-grey.svg" alt="arrow">
+								<div class="price-header">
+									<p class="price-type">Standard</p>
+									<span class="price-expand"></span>
+								</div>
+								<div class="price-content" style>
+									<div class="price-line"></div>
+									<p class="price-text">Release of Letraset sheets containing Lorem Ipsum passages,
+										and more recently</p>
+									<p>
+										<span class="text-red price-currency">$</span><span class="text-red price-value">25</span><span
+											class="price-summary">/ per hour</span>
+									</p>
+									<form action="#contacts">
+										<button class="order-button">Order</button>
+									</form>
 								</div>
 							</div>
 							<div class="price-item">
-								<div>Pro care</div>
-								<div class="price-circle">
-									<img src="./assets/svg/arrow-grey.svg" alt="arrow">
+								<div class="price-header">
+									<p class="price-type">Pro care</p>
+									<span class="price-expand"></span>
+								</div>
+								<div class="price-content" style>
+									<div class="price-line"></div>
+									<p class="price-text">Release of Letraset sheets containing Lorem Ipsum passages,
+										and more recently</p>
+									<p>
+										<span class="text-red price-currency">$</span><span class="text-red price-value">35</span><span
+											class="price-summary">/ per hour</span>
+									</p>
+									<form action="#contacts">
+										<button class="order-button">Order</button>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="prices-help-container">
+
+
+					<div class="prices-help">
 						<div class="prices-help-text">Our best
 							<span class="text-green">gardeners</span>
 							are <br>
 							ready to help you
 						</div>
-						<button class="btn contact-us-btn ">Contact us</button>
+						<button class="btn-bordered contact-us-btn ">Contact us</button>
 						<img class="prices-image-leafs" src="./assets/png/leafs-small.png" alt="leafs-small-image">
 					</div>
 				</div>
@@ -230,14 +268,114 @@
 						<img src="./assets/png/contact-woman.png" alt="contact-woman-photo">
 					</div>
 					<h2 class="contacts-title">Contact us</h2>
-					<div class="contacts-accordion-container">
-						<div class="contact-item">
-							<div>
-								City
+					<div class="city-container">
+						<div class="city-accordion">
+							<div class="city-header">
+								<div class="city-title">City</div>
+								<span class="city-expand"></span>
+							</div>
+							<div class="city-content" style>
+								<div class="city-list">
+									<div class="city-select" data-city="1">Canandaigua, NY</div>
+									<div class="city-select" data-city="2">New York City</div>
+									<div class="city-select" data-city="3">Yonkers, NY</div>
+									<div class="city-select" data-city="4">Sherrill, NY</div>
+								</div>
 							</div>
 						</div>
-						<div class="contact-circle">
-							<img src="./assets/svg/arrow-white.svg" alt="arrow">
+						<div class="city-details">
+							<div class="city-address" data-city="1" style>
+								<div class="address-container">
+									<table class="address-table">
+										<tbody>
+											<tr>
+												<th>City:</th>
+												<td>Canandaigua, NY</td>
+											</tr>
+											<tr>
+												<th>Phone:</th>
+												<td>+1 585 393 0001</td>
+											</tr>
+											<tr>
+												<th>Office address:</th>
+												<td>151 Charlotte Street</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="tel:+1 585 393 0001">
+										<button class="btn-bordered call-us-btn">Call us</button>
+									</a>
+								</div>
+							</div>
+							<div class="city-address" data-city="2">
+								<div class="address-container">
+									<table class="address-table">
+										<tbody>
+											<tr>
+												<th>City:</th>
+												<td>New York City</td>
+											</tr>
+											<tr>
+												<th>Phone:</th>
+												<td>+1 212 456 0002</td>
+											</tr>
+											<tr>
+												<th>Office address:</th>
+												<td>9 East 91st Street</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="tel:+1 212 456 0002">
+										<button class="btn-bordered call-us-btn">Call us</button>
+									</a>
+								</div>
+							</div>
+							<div class="city-address" data-city="3">
+								<div class="address-container">
+									<table class="address-table">
+										<tbody>
+											<tr>
+												<th>City:</th>
+												<td>Yonkers, NY</td>
+											</tr>
+											<tr>
+												<th>Phone:</th>
+												<td>+1 914 678 0003</td>
+											</tr>
+											<tr>
+												<th>Office address:</th>
+												<td>511 Warburton Ave</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="tel:+1 914 678 0003">
+										<button class="btn-bordered call-us-btn">Call us</button>
+									</a>
+								</div>
+							</div>
+							<div class="city-address" data-city="4">
+								<div class="address-container">
+									<table class="address-table">
+										<tbody>
+											<tr>
+												<th>City:</th>
+												<td>Sherrill, NY</td>
+											</tr>
+											<tr>
+												<th>Phone:</th>
+												<td>+1 315 908 0004</td>
+											</tr>
+											<tr>
+												<th>Office address:</th>
+												<td>14 WEST Noyes BLVD</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="tel:+1 315 908 0004">
+										<button class="btn-bordered call-us-btn">Call us</button>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -286,7 +424,11 @@
 			</div>
 		</div>
 	</footer>
-	<script src="index.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/burger.js"></script>
+	<script src="js/prices.js"></script>
+	<script src="js/service.js"></script>
+	<script src="js/contacts.js"></script>
 </body>
 
 </html>

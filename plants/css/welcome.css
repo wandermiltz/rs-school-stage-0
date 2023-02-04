@@ -1,0 +1,112 @@
+.welcome-section-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.welcome-article {
+	max-width: 549px;
+	padding: 98px 0 94px 0;
+}
+
+.welcome-title {
+	font-weight: 700;
+	font-size: 45px;
+	line-height: 50px;
+	color: var(--grey-text-color);
+}
+
+.welcome-text {
+	padding: 43px 0 48px 0;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 35px;
+	color: var(--dark-grey-text-color);
+}
+
+.welcome-image-leafs img {
+	width: 462px;
+	height: 424px;
+	margin: auto 0;
+	margin-top: 50px;
+	margin-left: -10px;
+}
+
+.learn-more-btn {
+	padding: 10px 24px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	text-transform: uppercase;
+	background: none;
+	border-style: solid;
+	border-color: var(--red-text-color);
+	border-radius: 10px;
+	border-width: 2px;
+	transition: 0.5s;
+}
+
+.learn-more-btn:hover {
+	color: white;
+	background-color: var(--red-text-color);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+
+	.welcome-article {
+		order: -1;
+		max-width: 346px;
+		padding: 40px 0 70px 0;
+	}
+
+	.welcome-title {
+		font-size: 35px;
+	}
+
+	.welcome-text {
+		padding: 30px 0 35px 5px;
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.welcome-image-leafs img {
+		width: 290px;
+		height: 270px;
+		margin: 0;
+		margin-top: 28px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.welcome-image-leafs {
+		display: none;
+	}
+
+	.welcome-section-container {
+		padding: 25px 0 25px 0;
+	}
+
+	.welcome-article {
+		max-width: 330px;
+		padding: 0;
+	}
+
+	.welcome-title {
+		font-size: 25px;
+		line-height: 35px;
+	}
+
+	.welcome-text {
+		padding: 22px 0 20px 0;
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.learn-more-btn {
+		width: 100px;
+		height: 34px;
+		padding: 0;
+		font-size: 10px;
+		line-height: 20px;
+	}
+}

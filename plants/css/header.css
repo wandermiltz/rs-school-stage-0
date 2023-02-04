@@ -1,0 +1,131 @@
+.header-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 42px 0;
+}
+
+.burger {
+	display: none;
+}
+
+.header-nav-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.header-nav-item {
+	padding: 0 0 0 45px;
+}
+
+.header-nav-link {
+	font-family: 'Inika', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 50px;
+	text-decoration: none;
+	color: var(--links-nav-black-color);
+	transition: 0.3s;
+}
+
+.header-nav-link:hover,
+.header-nav-link:focus,
+.header-nav-link:active {
+	font-weight: 700;
+	color: var(--red-text-color);
+}
+
+.header-logo-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+	.header-container {
+		padding: 36px 0 32px 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.header-container {
+		padding: 27px 0 20px 0;
+	}
+
+	@keyframes ani {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.burger {
+		display: block;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		background: url(../assets/png/burger.png) no-repeat center;
+		background-size: contain;
+		animation: ani 0.5s forwards;
+	}
+
+	.burger.active {
+		background: url(../assets/png/close.png) no-repeat center;
+		background-size: contain;
+	}
+
+	.header-container {
+		position: relative;
+	}
+
+	.header-nav-item {
+		padding: 0px 20px;
+	}
+
+	.header-nav-list a {
+		display: flex;
+		justify-content: center;
+		margin: 5px;
+		line-height: 36px;
+		color: var(--dark-grey-text-color);
+		background-color: var(--bg-section-green-color);
+		border-radius: 10px;
+	}
+
+	.header-nav-list li {
+		width: 100%;
+	}
+
+	.header-nav-list a:hover {
+		background-color: var(--light-green-hover-color);
+		color: var(--green-text-color)
+	}
+
+	.header-nav-list {
+		position: absolute;
+		top: 0;
+		right: 40px;
+		display: flex;
+		flex-direction: column;
+		padding: 5px;
+		z-index: 99;
+		transition: 0.5s;
+		transform: translateY(-100%);
+		background-color: white;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--light-grey-border-color);
+		border-radius: 10px;
+	}
+
+	.header-nav-list.active {
+		transform: translateY(30px);
+	}
+}
