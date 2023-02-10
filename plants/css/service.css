@@ -43,7 +43,7 @@
 
 .service-btn.active {
 	color: white;
-	background-color: var(--red-text-color);
+	background-color: var(--red-color);
 }
 
 .service-btn.disabled {
@@ -100,7 +100,7 @@
 	font-weight: 700;
 	font-size: 20px;
 	line-height: 20px;
-	color: var(--red-text-color);
+	color: var(--red-color);
 }
 
 .service-item-description-text {
