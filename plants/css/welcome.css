@@ -40,7 +40,7 @@
 	text-transform: uppercase;
 	background: none;
 	border-style: solid;
-	border-color: var(--red-text-color);
+	border-color: var(--red-color);
 	border-radius: 10px;
 	border-width: 2px;
 	transition: 0.5s;
@@ -48,7 +48,7 @@
 
 .learn-more-btn:hover {
 	color: white;
-	background-color: var(--red-text-color);
+	background-color: var(--red-color);
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
