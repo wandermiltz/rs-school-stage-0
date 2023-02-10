@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 40px 0 103px 0;
+	padding: 45px 0 103px 0;
 }
 
 .prices-title {
@@ -10,7 +10,7 @@
 	font-family: 'Inter', sans-serif;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 45px;
 	line-height: 48px;
 }
 
@@ -35,14 +35,14 @@
 
 .price-item {
 	width: 250px;
-	padding: 14px 40px;
+	padding: 14px 45px;
 	margin-top: 34px;
 	font-weight: 700;
 	font-size: 20px;
 	line-height: 20px;
 	border-radius: 20px;
 	background-color: var(--bg-section-green-color);
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .price-item:hover,
@@ -64,42 +64,42 @@
 	height: 16px;
 	border-radius: 50%;
 	background-color: var(--light-grey-circle-color);
-}
-
-.price-expand:before,
-.price-expand:after {
-	position: absolute;
-	width: 0.2px;
-	height: 3px;
-	content: "";
-	background-color: var(--grey-text-color);
-	transform: translate(-50%, -50%);
-}
-
-.price-expand:before {
-	top: 7px;
-	left: 9px;
-	transform: rotate(45deg);
-}
-
-.price-expand:after {
-	top: 7px;
-	left: 7px;
-	transform: rotate(-45deg);
+	transition: 0.3s;
 }
 
 .price-expand.active {
 	background-color: var(--dark-grey-circle-color);
 }
 
-.price-expand.active:before {
-	top: 5px;
+.price-expand::before,
+.price-expand::after {
+	position: absolute;
+	width: 0.3px;
+	height: 4px;
+	content: "";
+	background-color: var(--grey-text-color);
+}
+
+.price-expand::before {
+	top: 6px;
+	left: 9px;
+	transform: rotate(45deg);
+}
+
+.price-expand::after {
+	top: 6px;
+	left: 6.5px;
+	transform: rotate(-45deg);
+}
+
+.price-expand.active::before {
+	top: 5.5px;
 	background-color: white;
 	transform: rotate(-45deg);
 }
 
 .price-expand.active::after {
-	top: 5px;
+	top: 5.5px;
 	background-color: white;
 	transform: rotate(45deg);
 }
@@ -149,11 +149,11 @@
 	background-color: white;
 	border-radius: 10px;
 	border: 0;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .order-button:hover {
-	background-color: var(--grey-text-color);
+	background-color: var(--red-color);
 	color: white;
 }
 
@@ -168,7 +168,7 @@
 .prices-help-text {
 	padding: 0 0 39px 0;
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 45px;
 	line-height: 50px;
 	text-align: right;
 }
@@ -183,7 +183,7 @@
 
 .contact-us-btn:hover {
 	color: white;
-	background-color: var(--red-text-color);
+	background-color: var(--red-color);
 }
 
 .prices-image-leafs {
@@ -193,7 +193,7 @@
 
 @media (min-width: 768px) and (max-width: 1439px) {
 	.prices-section-container {
-		padding: 40px 0 80px 0;
+		padding: 45px 0 80px 0;
 	}
 
 	.prices-title {
@@ -248,7 +248,7 @@
 	.price-item {
 		width: 180px;
 		min-height: 50px;
-		padding: 0px 40px 14px 30px;
+		padding: 0px 45px 14px 30px;
 		margin-top: 15px;
 		font-size: 15px;
 	}

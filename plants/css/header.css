@@ -34,7 +34,7 @@
 .header-nav-link:focus,
 .header-nav-link:active {
 	font-weight: 700;
-	color: var(--red-text-color);
+	color: var(--red-color);
 }
 
 .header-logo-container {
