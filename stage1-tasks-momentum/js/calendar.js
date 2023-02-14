@@ -16,10 +16,10 @@ function showTime() {
 	timeElement.textContent = currentTime
 }
 
-function showCalender() {
+function showCalendar() {
 	showTime()
 	showDate()
-	setTimeout(showCalender, 1000)
+	setTimeout(showCalendar, 1000)
 }
 
-showCalender()
+showCalendar()
