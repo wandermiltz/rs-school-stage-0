@@ -1,5 +1,5 @@
 const greetingElement = document.querySelector('.greeting')
-
+const nameElement = document.querySelector('.name')
 
 function getTimeOfDay() {
 	const date = new Date()
@@ -9,19 +9,15 @@ function getTimeOfDay() {
 	if (hours > 18) {
 		timeOfDay = 'Evening'
 	}
-
 	if (hours > 12) {
 		timeOfDay = 'Afternoon'
 	}
-
 	if (hours > 6) {
 		timeOfDay = 'Morning'
 	}
-
 	if (hours > 0) {
 		timeOfDay = 'Night'
 	}
-
 	return timeOfDay
 }
 
@@ -33,3 +29,16 @@ function showGreeting() {
 }
 
 showGreeting()
+
+function setLocalStorage() {
+	localStorage.setItem('name', nameElement.value);
+}
+
+function getLocalStorage() {
+	if (localStorage.getItem('name')) {
+		nameElement.value = localStorage.getItem('name')
+	}
+}
+
+window.addEventListener('beforeunload', setLocalStorage)
+window.addEventListener('load', getLocalStorage)
