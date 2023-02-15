@@ -11,10 +11,14 @@ function getRandomNum(max, min) {
 let randomNum = getRandomNum(1, 20)
 
 function setBg() {
-	let timeOfDay = getTimeOfDay().toLowerCase()
-	let bgNum = randomNum.toString().padStart(2, '0')
+	const timeOfDay = getTimeOfDay().toLowerCase()
+	const bgNum = randomNum.toString().padStart(2, '0')
+	const img = new Image()
 
-	body.style.backgroundImage = `url('https://raw.githubusercontent.com/wandermiltz/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg')`
+	img.src = `https://raw.githubusercontent.com/wandermiltz/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`
+	img.onload = () => {
+		body.style.backgroundImage = `url(${img.src})`
+	}
 }
 
 setBg()
