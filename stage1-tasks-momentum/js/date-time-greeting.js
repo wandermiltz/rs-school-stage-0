@@ -1,5 +1,22 @@
+const timeElement = document.querySelector('.time')
+const dateElement = document.querySelector('.date')
 const greetingElement = document.querySelector('.greeting')
 const nameElement = document.querySelector('.name')
+
+function showDate() {
+	const date = new Date()
+	const options = { weekday: 'long', month: 'long', day: 'numeric' }
+	const currentDate = date.toLocaleDateString('en', options)
+
+	dateElement.textContent = currentDate
+}
+
+function showTime() {
+	const date = new Date()
+	const currentTime = date.toLocaleTimeString()
+
+	timeElement.textContent = currentTime
+}
 
 function getTimeOfDay() {
 	const date = new Date()
@@ -26,7 +43,14 @@ function showGreeting() {
 	greetingElement.textContent = greetingText
 }
 
-showGreeting()
+function showTimeDateGreeting() {
+	showTime()
+	showDate()
+	showGreeting()
+	setTimeout(showTimeDateGreeting, 1000)
+}
+
+showTimeDateGreeting()
 
 function setLocalStorage() {
 	localStorage.setItem('name', nameElement.value);
