@@ -1,12 +1,9 @@
 import { getTimeOfDay } from './date-time.js'
+import { getRandomNum } from './utils.js'
 
 const body = document.querySelector('body')
 const slideNext = document.querySelector('.slide-next')
 const slidePrev = document.querySelector('.slide-prev')
-
-function getRandomNum(max, min) {
-	return Math.floor(min + Math.random() * (max + 1 - min))
-}
 
 let randomNum = getRandomNum(1, 20)
 
