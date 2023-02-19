@@ -5,6 +5,24 @@ const playNextBtn = document.querySelector('.play-next')
 const playPrevBtn = document.querySelector('.play-prev')
 const playListContainer = document.querySelector('.play-list')
 
+playList.forEach(el => {
+	const li = document.createElement('li')
+	li.textContent = el.title
+	li.classList.add('play-item')
+	playListContainer.append(li)
+})
+
+const playListItems = document.querySelectorAll('.play-item')
+
+function getPlayListItemActive() {
+	if (isPlay) {
+		playListItems.forEach(el => {
+			el.classList.remove('item-active')
+		})
+		playListItems[playNum].classList.add('item-active')
+	}
+}
+
 const audio = new Audio()
 let playNum = 0
 let isPlay = false
@@ -12,10 +30,14 @@ let isPlay = false
 function playAudio() {
 	audio.src = playList[playNum].src
 	audio.currentTime = 0
+	audio.autoplay = true
 	audio.play()
 	isPlay = true
-
 }
+
+audio.addEventListener('ended', () => {
+	getAudioNext()
+})
 
 function pauseAudio() {
 	audio.pause()
@@ -41,6 +63,7 @@ function toggleAudioIcons() {
 function getAudioPlayToggle() {
 	toggleAudio()
 	toggleAudioIcons()
+	getPlayListItemActive()
 }
 
 function getAudioNext() {
@@ -51,6 +74,7 @@ function getAudioNext() {
 	}
 	playAudio()
 	toggleAudioIcons()
+	getPlayListItemActive()
 }
 
 function getAudioPrev() {
@@ -61,6 +85,7 @@ function getAudioPrev() {
 	}
 	playAudio()
 	toggleAudioIcons()
+	getPlayListItemActive()
 }
 
 playBtn.addEventListener('click', getAudioPlayToggle)
