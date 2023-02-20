@@ -1,19 +1,19 @@
-import { showGreeting, showDate, showPartOfDay } from './greeting.js'
-import { getWeather } from './weather.js'
-
+import { showDate, showPartOfDayGreeting } from './greeting.js'
+import { showWeather } from './weather.js'
 
 const langElement = document.getElementById('lang')
 
-function changeLanguage() {
+let language = 'en'
 
-	let language = lang.checked ? 'ru' : 'en'
+export function setLanguage() {
 
-	showGreeting(language)
+	language = lang.checked ? 'ru' : 'en'
+
 	showDate(language)
-	showPartOfDay(language)
-	getWeather(language)
+	showPartOfDayGreeting(language)
+	showWeather(language)
 }
 
-changeLanguage()
+setLanguage()
 
-langElement.addEventListener('click', changeLanguage)
+langElement.addEventListener('click', setLanguage)

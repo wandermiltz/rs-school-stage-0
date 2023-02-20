@@ -3,8 +3,7 @@ const dateElement = document.querySelector('.date')
 const nameElement = document.querySelector('.name')
 const greetingElement = document.querySelector('.greeting')
 
-let partOfDay = ''
-
+let partOfDay
 
 export const greetingTranslation = {
 	'en': 'Good',
@@ -29,7 +28,6 @@ export function getDate() {
 }
 
 export function showDate(lang = 'en') {
-
 	const date = getDate()
 	const options = { weekday: 'long', month: 'long', day: 'numeric' }
 	const currentDate = date.toLocaleDateString(lang, options)
@@ -54,23 +52,18 @@ export function getPartOfDay() {
 	return partOfDay
 }
 
-export function showGreeting(lang = 'en') {
-	greetingElement.textContent = `${greetingTranslation[lang]}`
-}
-
-export function showPartOfDay(lang = 'en') {
-	greetingElement.textContent = `${greetingTranslation[lang]} ${partOfDayTranslation[lang]}`
+export function showPartOfDayGreeting(lang = 'en') {
+	const partOfDayTranslated = partOfDayTranslation[lang][partOfDay]
+	greetingElement.textContent = `${greetingTranslation[lang]} ${partOfDayTranslated}`
 }
 
 export function showDateTimeLive() {
 	showTime()
+	getPartOfDay()
 	setTimeout(showDateTimeLive, 1000)
 }
 
 showDateTimeLive()
-showDate(lang)
-showGreeting(lang)
-showPartOfDay(lang)
 
 function setLocalStorage() {
 	localStorage.setItem('name', nameElement.value)

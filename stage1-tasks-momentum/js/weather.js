@@ -1,3 +1,5 @@
+import { setLanguage } from './translation.js'
+
 const cityElement = document.querySelector('.city')
 const weatherIcon = document.querySelector('.weather-icon')
 const temperatureElement = document.querySelector('.temperature')
@@ -42,7 +44,7 @@ function getLocalStorage() {
 	}
 }
 
-export async function getWeather(lang = 'en') {
+export async function showWeather(lang = 'en') {
 
 	weatherErrorElement.textContent = ''
 
@@ -72,9 +74,12 @@ export async function getWeather(lang = 'en') {
 	const windSpeed = Math.round(data.wind.speed)
 	const humidity = data.main.humidity
 
+	const windSpeedName = windSpeedTranslation[lang]
+	const humidityName = humidityTranslation[lang]
+
 	temperatureElement.textContent = `${temperature}°C`
-	windSpeedElement.textContent = `${windSpeedTranslation[lang]}: ${windSpeed} m/s`
-	humidityElement.textContent = `${humidityTranslation[lang]}: ${humidity} %`
+	windSpeedElement.textContent = `${windSpeedName}: ${windSpeed} m/s`
+	humidityElement.textContent = `${humidityName}: ${humidity} %`
 	weatherDescriptionElement.textContent = data.weather[0].description
 
 	weatherIcon.className = 'weather-icon owf'
@@ -82,8 +87,8 @@ export async function getWeather(lang = 'en') {
 }
 
 getLocalStorage()
-getWeather(lang)
+showWeather()
 
 window.addEventListener('beforeunload', setLocalStorage)
 window.addEventListener('load', getLocalStorage)
-cityElement.addEventListener('change', getWeather)
+cityElement.addEventListener('change', showWeather)
