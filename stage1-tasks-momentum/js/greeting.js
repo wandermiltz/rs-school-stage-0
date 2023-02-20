@@ -5,14 +5,15 @@ const greetingElement = document.querySelector('.greeting')
 
 let partOfDay = ''
 
-const greetingTranslation = {
+
+export const greetingTranslation = {
 	'en': 'Good',
 	'ru': 'Добрый'
 }
 
 export const partOfDayTranslation = {
 	'en': ['morning', 'afternoon', 'evening', 'night'],
-	'ru': ['eтро', 'день', 'вечер', 'ночь']
+	'ru': ['утро', 'день', 'вечер', 'ночь']
 }
 
 export function showTime() {
@@ -22,8 +23,14 @@ export function showTime() {
 	timeElement.textContent = currentTime
 }
 
-export function showDate(lang = 'en') {
+export function getDate() {
 	const date = new Date()
+	return date
+}
+
+export function showDate(lang = 'en') {
+
+	const date = getDate()
 	const options = { weekday: 'long', month: 'long', day: 'numeric' }
 	const currentDate = date.toLocaleDateString(lang, options)
 
@@ -43,23 +50,27 @@ export function getPartOfDay() {
 	} else if (hours >= 0) {
 		partOfDay = 3
 	}
+	console.log(partOfDay)
 	return partOfDay
 }
 
-function showGreeting(lang = 'en') {
-	const partOfDay = getPartOfDay(lang)
-	greetingElement.textContent = `${greetingTranslation[lang]} ${partOfDayTranslation[lang][partOfDay]}`
+export function showGreeting(lang = 'en') {
+	greetingElement.textContent = `${greetingTranslation[lang]}`
 }
 
-function showDateTimeLive(lang = 'en') {
+export function showPartOfDay(lang = 'en') {
+	greetingElement.textContent = `${greetingTranslation[lang]} ${partOfDayTranslation[lang]}`
+}
+
+export function showDateTimeLive() {
 	showTime()
-	showDate(lang)
-	getPartOfDay()
 	setTimeout(showDateTimeLive, 1000)
 }
 
 showDateTimeLive()
-showGreeting()
+showDate(lang)
+showGreeting(lang)
+showPartOfDay(lang)
 
 function setLocalStorage() {
 	localStorage.setItem('name', nameElement.value)

@@ -289,3 +289,17 @@ body {
 .hidden {
 	display: none;
 }
+
+#lang {
+	display: none;
+}
+
+#lang:checked~.rus,
+#lang:not(:checked)~.eng {
+	display: none;
+}
+
+label[for="lang"] {
+	user-select: none;
+	cursor: pointer;
+}
