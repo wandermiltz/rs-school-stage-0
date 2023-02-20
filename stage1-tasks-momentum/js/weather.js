@@ -33,7 +33,7 @@ function getLocalStorage() {
 	}
 }
 
-async function getWeather() {
+async function getWeather(lang = 'en') {
 
 	weatherErrorElement.textContent = ''
 
@@ -43,7 +43,7 @@ async function getWeather() {
 		return
 	}
 
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityElement.value}&lang=en&appid=3b3646771ed1200686eaeeb6c7cffeda&units=metric`
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityElement.value}&lang=${lang}&appid=3b3646771ed1200686eaeeb6c7cffeda&units=metric`
 	const res = await fetch(url)
 	const data = await res.json()
 
