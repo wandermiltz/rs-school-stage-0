@@ -1,17 +1,41 @@
 import { showDate, showPartOfDayGreeting } from './greeting.js'
 import { showWeather } from './weather.js'
 
-const langElement = document.getElementById('lang')
+const nameElement = document.querySelector('.name')
+const cityElement = document.querySelector('.city')
+const langElement = document.getElementById('language')
 
-let language = 'en'
+let lang = 'en'
+
+const placeholderNameTranslation = {
+	'en': 'Enter name',
+	'ru': 'Введите имя'
+}
+
+const placeholderCityTranslation = {
+	'en': 'Enter city',
+	'ru': 'Введите город'
+}
+
+
+function showNamePlaceholder(lang = 'en') {
+	nameElement.placeholder = `[${placeholderNameTranslation[lang]}]`
+}
+
+function showCityPlaceholder(lang = 'en') {
+	cityElement.placeholder = `[${placeholderCityTranslation[lang]}]`
+}
+
 
 export function setLanguage() {
 
-	language = lang.checked ? 'ru' : 'en'
+	lang = language.checked ? 'ru' : 'en'
 
-	showDate(language)
-	showPartOfDayGreeting(language)
-	showWeather(language)
+	showDate(lang)
+	showPartOfDayGreeting(lang)
+	showWeather(lang)
+	showNamePlaceholder(lang)
+	showCityPlaceholder(lang)
 }
 
 setLanguage()

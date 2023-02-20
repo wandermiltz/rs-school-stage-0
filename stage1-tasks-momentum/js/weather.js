@@ -43,7 +43,6 @@ function getLocalStorage() {
 		cityElement.value = `Minsk`
 	}
 }
-
 export async function showWeather(lang = 'en') {
 
 	weatherErrorElement.textContent = ''
@@ -84,6 +83,7 @@ export async function showWeather(lang = 'en') {
 
 	weatherIcon.className = 'weather-icon owf'
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`)
+
 }
 
 getLocalStorage()

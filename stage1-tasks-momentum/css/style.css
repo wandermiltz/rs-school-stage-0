@@ -290,16 +290,22 @@ body {
 	display: none;
 }
 
-#lang {
+#language {
 	display: none;
 }
 
-#lang:checked~.rus,
-#lang:not(:checked)~.eng {
+#language:checked~.ru,
+#language:not(:checked)~.en {
 	display: none;
 }
 
-label[for="lang"] {
+label[for="language"] {
 	user-select: none;
 	cursor: pointer;
+	transition: 0.3s;
+	opacity: .8;
+}
+
+label[for="language"]:hover {
+	opacity: 1;
 }
