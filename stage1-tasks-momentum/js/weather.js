@@ -22,6 +22,11 @@ const humidityTranslation = {
 	'ru': 'Влажность'
 }
 
+const defaultCityTranslation = {
+	'en': 'Minsk',
+	'ru': 'Минск'
+}
+
 const placeholderCityTranslation = {
 	'en': 'Enter city',
 	'ru': 'Введите город'
@@ -32,12 +37,21 @@ function showCityPlaceholder() {
 	cityElement.placeholder = `[${placeholderCityTranslation[lang]}]`
 }
 
+function switchDefaultCityLang() {
+	if ((cityElement.value == 'Minsk')) {
+		cityElement.value = defaultCityTranslation['ru']
+	} else if ((cityElement.value == 'Минск')) {
+		cityElement.value = defaultCityTranslation['en']
+	}
+}
+
 function getWeatherEmpty() {
 	temperatureElement.textContent = ``
 	windSpeedElement.textContent = ``
 	humidityElement.textContent = ``
 	weatherDescriptionElement.textContent = ``
 	weatherIcon.classList.add('hidden')
+	localStorage.clear()
 }
 
 function setLocalStorage() {
@@ -50,7 +64,8 @@ function getLocalStorage() {
 	if (localStorage.getItem('city')) {
 		cityElement.value = localStorage.getItem('city')
 	} else {
-		cityElement.value = `Minsk`
+		const lang = getCurrentLang()
+		cityElement.value = defaultCityTranslation[lang]
 	}
 }
 export async function showWeather() {
@@ -105,3 +120,4 @@ cityElement.addEventListener('change', showWeather)
 
 addLangChangedListener(showWeather)
 addLangChangedListener(showCityPlaceholder)
+addLangChangedListener(switchDefaultCityLang)
