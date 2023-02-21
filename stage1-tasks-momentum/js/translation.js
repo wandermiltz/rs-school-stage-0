@@ -1,43 +1,21 @@
-import { showDate, showPartOfDayGreeting } from './greeting.js'
-import { showWeather } from './weather.js'
-
-const nameElement = document.querySelector('.name')
-const cityElement = document.querySelector('.city')
 const langElement = document.getElementById('language')
 
-let lang = 'en'
-
-const placeholderNameTranslation = {
-	'en': 'Enter name',
-	'ru': 'Введите имя'
+const state = {
+	lang: 'en',
+	langChangeListeners: []
 }
 
-const placeholderCityTranslation = {
-	'en': 'Enter city',
-	'ru': 'Введите город'
-}
-
-
-function showNamePlaceholder(lang = 'en') {
-	nameElement.placeholder = `[${placeholderNameTranslation[lang]}]`
-}
-
-function showCityPlaceholder(lang = 'en') {
-	cityElement.placeholder = `[${placeholderCityTranslation[lang]}]`
-}
-
+export const getCurrentLang = () => state.lang
+export const addLangChangedListener = (listener) => state.langChangeListeners.push(listener)
 
 export function setLanguage() {
 
-	lang = language.checked ? 'ru' : 'en'
+	state.lang = language.checked ? 'ru' : 'en'
+	console.log('lang changed', state.lang)
 
-	showDate(lang)
-	showPartOfDayGreeting(lang)
-	showWeather(lang)
-	showNamePlaceholder(lang)
-	showCityPlaceholder(lang)
+	state.langChangeListeners.forEach(func => {
+		func()
+	})
 }
-
-setLanguage()
 
 langElement.addEventListener('click', setLanguage)

@@ -1,4 +1,4 @@
-import { setLanguage } from './translation.js'
+import { getCurrentLang, addLangChangedListener } from './translation.js'
 
 const cityElement = document.querySelector('.city')
 const weatherIcon = document.querySelector('.weather-icon')
@@ -22,6 +22,16 @@ const humidityTranslation = {
 	'ru': 'Влажность'
 }
 
+const placeholderCityTranslation = {
+	'en': 'Enter city',
+	'ru': 'Введите город'
+}
+
+function showCityPlaceholder() {
+	const lang = getCurrentLang()
+	cityElement.placeholder = `[${placeholderCityTranslation[lang]}]`
+}
+
 function getWeatherEmpty() {
 	temperatureElement.textContent = ``
 	windSpeedElement.textContent = ``
@@ -43,8 +53,9 @@ function getLocalStorage() {
 		cityElement.value = `Minsk`
 	}
 }
-export async function showWeather(lang = 'en') {
+export async function showWeather() {
 
+	const lang = getCurrentLang()
 	weatherErrorElement.textContent = ''
 
 	if (!cityElement.value) {
@@ -83,7 +94,6 @@ export async function showWeather(lang = 'en') {
 
 	weatherIcon.className = 'weather-icon owf'
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`)
-
 }
 
 getLocalStorage()
@@ -92,3 +102,6 @@ showWeather()
 window.addEventListener('beforeunload', setLocalStorage)
 window.addEventListener('load', getLocalStorage)
 cityElement.addEventListener('change', showWeather)
+
+addLangChangedListener(showWeather)
+addLangChangedListener(showCityPlaceholder)

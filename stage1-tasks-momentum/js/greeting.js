@@ -1,3 +1,5 @@
+import { getCurrentLang, addLangChangedListener } from './translation.js'
+
 const timeElement = document.querySelector('.time')
 const dateElement = document.querySelector('.date')
 const nameElement = document.querySelector('.name')
@@ -5,7 +7,7 @@ const greetingElement = document.querySelector('.greeting')
 
 let partOfDay
 
-export const greetingTranslation = {
+const greetingTranslation = {
 	'en': 'Good',
 	'ru': 'Добрый'
 }
@@ -15,19 +17,25 @@ export const partOfDayTranslation = {
 	'ru': ['утро', 'день', 'вечер', 'ночь']
 }
 
-export function showTime() {
+const placeholderNameTranslation = {
+	'en': 'Enter name',
+	'ru': 'Введите имя'
+}
+
+function showTime() {
 	const date = new Date()
 	const currentTime = date.toLocaleTimeString()
 
 	timeElement.textContent = currentTime
 }
 
-export function getDate() {
+function getDate() {
 	const date = new Date()
 	return date
 }
 
-export function showDate(lang = 'en') {
+function showDate() {
+	const lang = getCurrentLang()
 	const date = getDate()
 	const options = { weekday: 'long', month: 'long', day: 'numeric' }
 	const currentDate = date.toLocaleDateString(lang, options)
@@ -48,22 +56,24 @@ export function getPartOfDay() {
 	} else if (hours >= 0) {
 		partOfDay = 3
 	}
-	console.log(partOfDay)
 	return partOfDay
 }
 
-export function showPartOfDayGreeting(lang = 'en') {
+function showPartOfDayGreeting() {
+	const lang = getCurrentLang()
 	const partOfDayTranslated = partOfDayTranslation[lang][partOfDay]
 	greetingElement.textContent = `${greetingTranslation[lang]} ${partOfDayTranslated}`
 }
 
-export function showDateTimeLive() {
+function showDateTimeGreetingLive() {
 	showTime()
+	showDate()
 	getPartOfDay()
-	setTimeout(showDateTimeLive, 1000)
+	showPartOfDayGreeting()
+	setTimeout(showDateTimeGreetingLive, 1000)
 }
 
-showDateTimeLive()
+showDateTimeGreetingLive()
 
 function setLocalStorage() {
 	localStorage.setItem('name', nameElement.value)
@@ -75,5 +85,14 @@ function getLocalStorage() {
 	}
 }
 
+function showNamePlaceholder() {
+	const lang = getCurrentLang()
+	nameElement.placeholder = `[${placeholderNameTranslation[lang]}]`
+}
+
 window.addEventListener('beforeunload', setLocalStorage)
 window.addEventListener('load', getLocalStorage)
+
+addLangChangedListener(showPartOfDayGreeting)
+addLangChangedListener(showDate)
+addLangChangedListener(showNamePlaceholder)
