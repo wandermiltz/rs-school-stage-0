@@ -36,7 +36,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 120px;
+	width: 180px;
 	margin-bottom: 28px;
 }
 
@@ -307,5 +307,27 @@ label[for="language"] {
 }
 
 label[for="language"]:hover {
+	opacity: 1;
+}
+
+.sound {
+	width: 36px;
+	height: 36px;
+	background-size: 32px 32px;
+	cursor: pointer;
+	transition: 0.3s;
+	border: 0;
+	outline: 0;
+	opacity: 0.8;
+	background-color: rgb(0 0 0 / 0%);
+	background-image: url("../assets/svg/sound.svg");
+}
+
+.mute {
+	background-image: url("../assets/svg/mute.svg");
+}
+
+.mute:hover,
+.sound:hover {
 	opacity: 1;
 }

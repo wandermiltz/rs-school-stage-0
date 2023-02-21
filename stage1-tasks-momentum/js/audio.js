@@ -4,6 +4,7 @@ const playBtn = document.querySelector('.play')
 const playNextBtn = document.querySelector('.play-next')
 const playPrevBtn = document.querySelector('.play-prev')
 const playListContainer = document.querySelector('.play-list')
+const soundBtn = document.querySelector('.sound')
 
 playList.forEach(el => {
 	const li = document.createElement('li')
@@ -88,6 +89,21 @@ function getAudioPrev() {
 	getPlayListItemActive()
 }
 
+function toggleMute() {
+	audio.muted = !audio.muted
+}
+
+function toggleMuteIcons() {
+	if (!audio.muted) {
+		soundBtn.classList.remove('mute')
+	} else {
+		soundBtn.classList.add('mute')
+	}
+
+}
+
 playBtn.addEventListener('click', getAudioPlayToggle)
 playNextBtn.addEventListener('click', getAudioNext)
 playPrevBtn.addEventListener('click', getAudioPrev)
+soundBtn.addEventListener('click', toggleMute)
+soundBtn.addEventListener('click', toggleMuteIcons)
