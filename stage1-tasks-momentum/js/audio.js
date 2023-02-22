@@ -7,8 +7,10 @@ const playListContainer = document.querySelector('.play-list')
 const soundBtn = document.querySelector('.sound')
 const timeline = document.querySelector('.timeline')
 const progressBar = document.querySelector('.progress')
-const songCurrentTime = document.querySelector('.song-time .song-current-time')
-const songDuration = document.querySelector('.song-time .song-duration')
+const songCurrentTime = document.querySelector('.song-current-time')
+const songDuration = document.querySelector('.song-duration')
+const currentSongName = document.querySelector('.current-song-name')
+
 
 playList.forEach(el => {
 	const li = document.createElement('li')
@@ -28,12 +30,14 @@ function getPlayListItemActive() {
 	}
 }
 
+
 const audio = new Audio()
 let playNum = 0
 let isPlay = false
 
 function playAudio() {
 	audio.src = playList[playNum].src
+	currentSongName.textContent = playList[playNum].title
 	songDuration.textContent = playList[playNum].duration
 	audio.currentTime = 0
 	audio.autoplay = true
