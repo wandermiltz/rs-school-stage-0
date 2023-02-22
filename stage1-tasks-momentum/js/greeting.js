@@ -8,13 +8,8 @@ const greetingElement = document.querySelector('.greeting')
 let partOfDay
 
 const greetingTranslation = {
-	'en': 'Good',
-	'ru': 'Добрый'
-}
-
-export const partOfDayTranslation = {
-	'en': ['morning', 'afternoon', 'evening', 'night'],
-	'ru': ['утро', 'день', 'вечер', 'ночь']
+	'en': ['Good morning', 'Good afternoon', 'Good evening', 'Good night'],
+	'ru': ['Доброе утро', 'Добрый день', 'Добрый вечер', 'Доброй ночи']
 }
 
 const placeholderNameTranslation = {
@@ -39,7 +34,6 @@ function showDate() {
 	const date = getDate()
 	const options = { weekday: 'long', month: 'long', day: 'numeric' }
 	const currentDate = date.toLocaleDateString(lang, options)
-
 	dateElement.textContent = currentDate
 }
 
@@ -61,8 +55,8 @@ export function getPartOfDay() {
 
 function showPartOfDayGreeting() {
 	const lang = getCurrentLang()
-	const partOfDayTranslated = partOfDayTranslation[lang][partOfDay]
-	greetingElement.textContent = `${greetingTranslation[lang]} ${partOfDayTranslated}`
+	const greetingTranslated = greetingTranslation[lang][partOfDay]
+	greetingElement.textContent = greetingTranslated
 }
 
 function showDateTimeGreetingLive() {

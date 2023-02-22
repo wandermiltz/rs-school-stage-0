@@ -4,6 +4,11 @@ const playBtn = document.querySelector('.play')
 const playNextBtn = document.querySelector('.play-next')
 const playPrevBtn = document.querySelector('.play-prev')
 const playListContainer = document.querySelector('.play-list')
+const soundBtn = document.querySelector('.sound')
+const timeline = document.querySelector('.timeline')
+const progressBar = document.querySelector('.progress')
+const songCurrentTime = document.querySelector('.song-time .song-current-time')
+const songDuration = document.querySelector('.song-time .song-duration')
 
 playList.forEach(el => {
 	const li = document.createElement('li')
@@ -29,6 +34,7 @@ let isPlay = false
 
 function playAudio() {
 	audio.src = playList[playNum].src
+	songDuration.textContent = playList[playNum].duration
 	audio.currentTime = 0
 	audio.autoplay = true
 	audio.play()
@@ -88,6 +94,44 @@ function getAudioPrev() {
 	getPlayListItemActive()
 }
 
+function toggleMute() {
+	audio.muted = !audio.muted
+}
+
+function toggleMuteIcons() {
+	if (!audio.muted) {
+		soundBtn.classList.remove('mute')
+	} else {
+		soundBtn.classList.add('mute')
+	}
+}
+
 playBtn.addEventListener('click', getAudioPlayToggle)
 playNextBtn.addEventListener('click', getAudioNext)
 playPrevBtn.addEventListener('click', getAudioPrev)
+soundBtn.addEventListener('click', toggleMute)
+soundBtn.addEventListener('click', toggleMuteIcons)
+
+timeline.addEventListener('click', el => {
+	const timelineWidth = window.getComputedStyle(timeline).width
+	const timeToSeek = el.offsetX / parseInt(timelineWidth) * audio.duration
+	audio.currentTime = timeToSeek
+}, false)
+
+function getTimeCodeFromNum(num) {
+	let seconds = parseInt(num)
+	let minutes = parseInt(seconds / 60)
+	seconds -= minutes * 60
+	const hours = parseInt(minutes / 60)
+	minutes -= hours * 60
+
+	if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`
+	return `${String(hours).padStart(2, 0)}:${minutes}:${String(seconds % 60).padStart(2, 0)}`
+}
+
+setInterval(() => {
+	progressBar.style.width = audio.currentTime / audio.duration * 100 + '%'
+	songCurrentTime.textContent = getTimeCodeFromNum(
+		audio.currentTime
+	)
+}, 500)

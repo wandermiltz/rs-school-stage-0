@@ -1,4 +1,4 @@
-import { getPartOfDay, partOfDayTranslation } from './greeting.js'
+import { getPartOfDay } from './greeting.js'
 import { getRandomNum } from './utils.js'
 
 const body = document.querySelector('body')
@@ -6,11 +6,11 @@ const slideNext = document.querySelector('.slide-next')
 const slidePrev = document.querySelector('.slide-prev')
 
 let randomNum = getRandomNum(1, 20)
-let lang = 'en'
+const partOfDayTranslation = ['morning', 'afternoon', 'evening', 'night']
 
 function setBg() {
 	const partOfDay = getPartOfDay()
-	const partOfDayTranslated = partOfDayTranslation[lang][partOfDay]
+	const partOfDayTranslated = partOfDayTranslation[partOfDay]
 	const bgNum = randomNum.toString().padStart(2, '0')
 	const img = new Image()
 
