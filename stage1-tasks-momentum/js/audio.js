@@ -10,7 +10,8 @@ const progressBar = document.querySelector('.progress')
 const songCurrentTime = document.querySelector('.song-current-time')
 const songDuration = document.querySelector('.song-duration')
 const currentSongName = document.querySelector('.current-song-name')
-
+const volumeSlider = document.querySelector('.volume-slider')
+const volumePercentage = document.querySelector('.volume-percentage')
 
 playList.forEach(el => {
 	const li = document.createElement('li')
@@ -139,3 +140,10 @@ setInterval(() => {
 		audio.currentTime
 	)
 }, 500)
+
+volumeSlider.addEventListener('click', el => {
+	const sliderWidth = window.getComputedStyle(volumeSlider).width
+	const newVolume = el.offsetX / parseInt(sliderWidth)
+	audio.volume = newVolume
+	volumePercentage.style.width = newVolume * 100 + '%';
+}, false)

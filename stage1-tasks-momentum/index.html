@@ -17,12 +17,15 @@
 				<button class="play-prev player-icon"></button>
 				<button class="play player-icon"></button>
 				<button class="play-next player-icon"></button>
-				<button class="sound"></button>
+				<div class="sound-controls">
+					<button class="sound"></button>
+					<div class="volume-slider">
+						<div class="volume-percentage"></div>
+					</div>
+				</div>
 			</div>
 			<div class="current-song-name"></div>
 			<div class="player-timeline">
-
-
 				<div class="timeline">
 					<div class="progress" style="width: 0%;"></div>
 					<div class="song-time">
@@ -31,12 +34,8 @@
 						<div class="song-duration"></div>
 					</div>
 				</div>
-
-
 			</div>
-
 			<ul class="play-list"></ul>
-
 		</div>
 		<div class="settings">
 			<input id="language" type="checkbox">

@@ -36,7 +36,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 180px;
+	width: 230px;
 	margin-bottom: 16px;
 }
 
@@ -312,9 +312,9 @@ label[for="language"]:hover {
 }
 
 .sound {
-	width: 36px;
-	height: 36px;
-	background-size: 32px 32px;
+	width: 30px;
+	height: 30px;
+	background-size: 30px 30px;
 	cursor: pointer;
 	transition: 0.3s;
 	border: 0;
@@ -358,7 +358,7 @@ label[for="language"]:hover {
 }
 
 .song-time {
-	margin-top: 5px;
+	margin-top: 8px;
 	display: flex;
 	opacity: 0.8;
 	font-size: 12px;
@@ -366,4 +366,28 @@ label[for="language"]:hover {
 
 .current-song-name {
 	text-align: left;
+}
+
+.sound-controls {
+	display: inline-flex;
+	align-items: center;
+}
+
+.volume-slider {
+	width: 0;
+	height: 4px;
+	background: white;
+	box-shadow: 0 0 20px #000a;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.volume-percentage {
+	background: rgb(197 179 88);
+	height: 100%;
+	width: 75%;
+}
+
+.volume-slider {
+	width: 70px;
 }
