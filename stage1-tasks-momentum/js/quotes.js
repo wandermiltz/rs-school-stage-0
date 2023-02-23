@@ -26,3 +26,6 @@ getQuotes()
 
 changeQuoteBtn.addEventListener('click', getQuotes)
 addLangChangedListener(getQuotes)
+
+
+console.log('* Балл: 120 \n* Часы и календарь +15\n* Приветствие +10\n* Смена фонового изображения +20\n* Виджет погоды +15\n* Виджет цитата дня +10\n* Аудиоплеер +15\n* Продвинутый аудиоплеер +20\n* Перевод приложения на два языка (en/ru) +15')
