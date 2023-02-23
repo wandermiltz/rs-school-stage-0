@@ -17,7 +17,7 @@ body {
 	font-size: 16px;
 	color: #fff;
 	text-align: center;
-	background: center/cover, rgba(0, 0, 0, 0.5);
+	background: no-repeat center/cover, rgba(0, 0, 0, 0.5);
 	background-blend-mode: multiply;
 	transition: background-image 1s ease-in-out;
 }
@@ -27,7 +27,7 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 	width: 100%;
-	height: 30vh;
+	height: 35vh;
 	min-height: 220px;
 	padding: 20px;
 }
@@ -40,14 +40,13 @@ body {
 	margin-bottom: 16px;
 }
 
-.play-list {
-	text-align: left;
-}
-
 .play-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	font-size: 14px;
 	position: relative;
-	padding: 3px;
+	padding: 4px;
 	padding-left: 20px;
 	list-style: none;
 	opacity: .8;
@@ -60,14 +59,15 @@ body {
 }
 
 .play-item::before {
-	content: "\2713";
+	content: "\266A";
 	position: absolute;
 	left: 0;
 	top: 2px;
 	font-weight: 900;
 }
 
-.item-active::before {
+.item-active::before,
+.item-active {
 	color: #C5B358;
 }
 
@@ -106,6 +106,12 @@ body {
 	height: 40px;
 	background-size: 40px 40px;
 	background-image: url("../assets/svg/play.svg");
+}
+
+.player-icon-small {
+	width: 18px;
+	height: 18px;
+	background-size: 18px 18px;
 }
 
 .pause {
@@ -196,7 +202,7 @@ body {
 }
 
 .time {
-	min-height: 124px;
+	min-height: 100px;
 	margin-bottom: 10px;
 	font-family: 'Arial-MT';
 	font-size: 100px;
@@ -248,7 +254,7 @@ body {
 	justify-content: flex-end;
 	align-items: center;
 	width: 100%;
-	height: 30vh;
+	height: 20vh;
 	min-height: 160px;
 	padding: 20px;
 }
@@ -274,7 +280,7 @@ body {
 
 	.greeting-container {
 		min-height: 40px;
-		font-size: 32px;
+		font-size: 24px;
 	}
 
 	.greeting {
@@ -385,7 +391,7 @@ label[for="language"]:hover {
 .volume-percentage {
 	background: rgb(197 179 88);
 	height: 100%;
-	width: 75%;
+	width: 25%;
 }
 
 .volume-slider {
